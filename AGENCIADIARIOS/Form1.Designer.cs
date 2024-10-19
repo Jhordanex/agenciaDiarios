@@ -38,7 +38,6 @@ namespace AGENCIADIARIOS
 			this.label1 = new System.Windows.Forms.Label();
 			this.dtgDiarios = new System.Windows.Forms.DataGridView();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
-			this.label2 = new System.Windows.Forms.Label();
 			this.lblNombreUser = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dtgDiarios)).BeginInit();
@@ -143,15 +142,6 @@ namespace AGENCIADIARIOS
 			this.pictureBox3.TabStop = false;
 			this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
 			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(0, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(35, 13);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "label2";
-			// 
 			// lblNombreUser
 			// 
 			this.lblNombreUser.AutoSize = true;
@@ -168,7 +158,6 @@ namespace AGENCIADIARIOS
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1000, 531);
 			this.Controls.Add(this.lblNombreUser);
-			this.Controls.Add(this.label2);
 			this.Controls.Add(this.dtgDiarios);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.pictureBox3);
@@ -195,7 +184,6 @@ namespace AGENCIADIARIOS
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dtgDiarios;
         private System.Windows.Forms.PictureBox pictureBox3;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label lblNombreUser;
 	}
 }

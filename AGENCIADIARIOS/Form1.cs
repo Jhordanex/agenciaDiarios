@@ -190,7 +190,7 @@ namespace AGENCIADIARIOS
                     DataGridViewRow filaSeleccionada = dtgDiarios.Rows[e.RowIndex];
 
                     // Asigna el valor de la celda "nombreDiario" al TextBox
-                    txtNombreDiario.Text = filaSeleccionada.Cells["vchNombreDiario"].Value.ToString();
+                    txtNombreDiario.Text = filaSeleccionada.Cells["NOMBRE DIARIO"].Value.ToString();
                 }
                 
             }
