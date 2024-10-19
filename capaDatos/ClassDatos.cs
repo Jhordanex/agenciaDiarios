@@ -41,14 +41,14 @@ namespace capaDatos
             try
             {
                 AbrirConexion();
-                string query = "SELECT username FROM Users WHERE idUser = @idUser";
+                string query = "SELECT vchNombreUsuario FROM Usuarios WHERE idUsuario = @idUsuario";
                 SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@idUser", idUser);
+                cmd.Parameters.AddWithValue("@idUsuario", idUser);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    nombre = reader["username"].ToString();
+                    nombre = reader["vchNombreUsuario"].ToString();
                 }
                 reader.Close();
             }
@@ -60,7 +60,6 @@ namespace capaDatos
             {
                 CerrarConexion();
             }
-
             return nombre;
         }
 

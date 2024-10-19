@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\PROYECTOS\\AGENCIA DIARIOS\\agenciaDiarios\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AE732F60-81C0-47C6-957A-E0CB50B76E77}|capaDatos\\capaDatos.csproj|C:\\Users\\Usuario\\Documents\\PROYECTOS\\AGENCIA DIARIOS\\agenciaDiarios\\capadatos\\classdatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE732F60-81C0-47C6-957A-E0CB50B76E77}|capaDatos\\capaDatos.csproj|solutionrelative:capadatos\\classdatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7928EC6D-0AB8-4B52-B827-030CDCD4D65E}|AGENCIADIARIOS\\capaPresentacion.csproj|C:\\Users\\Usuario\\Documents\\PROYECTOS\\AGENCIA DIARIOS\\agenciaDiarios\\agenciadiarios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7928EC6D-0AB8-4B52-B827-030CDCD4D65E}|AGENCIADIARIOS\\capaPresentacion.csproj|solutionrelative:agenciadiarios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7928EC6D-0AB8-4B52-B827-030CDCD4D65E}|AGENCIADIARIOS\\capaPresentacion.csproj|c:\\users\\usuario\\documents\\proyectos\\agencia diarios\\agenciadiarios\\agenciadiarios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7928EC6D-0AB8-4B52-B827-030CDCD4D65E}|AGENCIADIARIOS\\capaPresentacion.csproj|solutionrelative:agenciadiarios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\PROYECTOS\\AGENCIA DIARIOS\\agenciaDiarios\\AGENCIADIARIOS\\Form1.cs",
+              "RelativeDocumentMoniker": "AGENCIADIARIOS\\Form1.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\PROYECTOS\\AGENCIA DIARIOS\\agenciaDiarios\\AGENCIADIARIOS\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "AGENCIADIARIOS\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T15:13:22.714Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\PROYECTOS\\AGENCIA DIARIOS\\agenciaDiarios\\AGENCIADIARIOS\\Form1.cs",
+              "RelativeDocumentMoniker": "AGENCIADIARIOS\\Form1.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\PROYECTOS\\AGENCIA DIARIOS\\agenciaDiarios\\AGENCIADIARIOS\\Form1.cs",
+              "RelativeToolTip": "AGENCIADIARIOS\\Form1.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAqwCEAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T15:24:27.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClassDatos.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\PROYECTOS\\AGENCIA DIARIOS\\agenciaDiarios\\capaDatos\\ClassDatos.cs",
+              "RelativeDocumentMoniker": "capaDatos\\ClassDatos.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\PROYECTOS\\AGENCIA DIARIOS\\agenciaDiarios\\capaDatos\\ClassDatos.cs",
+              "RelativeToolTip": "capaDatos\\ClassDatos.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAAC0AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T15:13:23.425Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
