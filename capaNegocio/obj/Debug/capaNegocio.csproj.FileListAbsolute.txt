@@ -4,6 +4,6 @@ C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\capaNegocio\
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\capaNegocio\bin\Debug\capaDatos.pdb
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\capaNegocio\obj\Debug\capaNegocio.csproj.AssemblyReference.cache
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\capaNegocio\obj\Debug\capaNegocio.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\capaNegocio\obj\Debug\capaNegocio.csproj.CopyComplete
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\capaNegocio\obj\Debug\capaNegocio.dll
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\capaNegocio\obj\Debug\capaNegocio.pdb
+C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\capaNegocio\obj\Debug\capaNego.836DF9B9.Up2Date

@@ -21,8 +21,8 @@ C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\AGENCIADIARI
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\AGENCIADIARIOS\obj\Debug\AGENCIADIARIOS.Properties.Resources.resources
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\AGENCIADIARIOS\obj\Debug\capaPresentacion.csproj.GenerateResource.cache
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\AGENCIADIARIOS\obj\Debug\capaPresentacion.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\AGENCIADIARIOS\obj\Debug\capaPresentacion.csproj.CopyComplete
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\AGENCIADIARIOS\obj\Debug\AGENCIADIARIOS.exe
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\AGENCIADIARIOS\obj\Debug\AGENCIADIARIOS.pdb
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\AGENCIADIARIOS\bin\Debug\capaNegocio.dll
 C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\AGENCIADIARIOS\bin\Debug\capaNegocio.pdb
+C:\Users\Usuario\Documents\PROYECTOS\AGENCIA DIARIOS\agenciaDiarios\AGENCIADIARIOS\obj\Debug\capaPres.209BE91D.Up2Date

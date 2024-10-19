@@ -25,10 +25,13 @@ namespace AGENCIADIARIOS
 
         protected void Form1_Load(object sender, EventArgs e)
         {
+            txtNombreDiario.Enabled = false;
+            btnAgregar.Text = "Nuevo";
+
             ClassDatos conexion = new ClassDatos();
             conexion.AbrirConexion();
 
-            snombre = usuarioNegocio.ObtenerNombreUsuario(7);
+            snombre = usuarioNegocio.ObtenerNombreUsuario(1);
 
             if (!string.IsNullOrEmpty(snombre))
             {
@@ -78,11 +81,18 @@ namespace AGENCIADIARIOS
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            btnEditar.Enabled = false;
+            txtNombreDiario.Enabled = true;
+            btnEliminar.Enabled = false;
+            btnAgregar.Text = "Agregar";
+
             string sNombreDiario = txtNombreDiario.Text;
 
             if (!string.IsNullOrEmpty(sNombreDiario))
             {
                 usuarioNegocio.AgregarDiario(sNombreDiario, 7);
+                txtNombreDiario.Text = "";
+                txtNombreDiario.Focus();
             }
             else
             {
@@ -112,43 +122,56 @@ namespace AGENCIADIARIOS
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+		private void btnEliminar_Click(object sender, EventArgs e)
+		{
+			if (dtgDiarios.SelectedRows.Count > 0)
+			{
+				DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+				if (result == DialogResult.Yes)
+				{
+					int iIdDiario = Convert.ToInt32(dtgDiarios.SelectedRows[0].Cells[0].Value);
+					usuarioNegocio.EliminarDiario(iIdDiario);
+					CargarDiarios();
+				}
+			}
+			else
+			{
+				MessageBox.Show("Por favor, selecciona un registro para eliminar.");
+			}
+		}
+
+		private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dtgDiarios.SelectedRows.Count > 0)
             {
-                int iIdDiario = Convert.ToInt32(dtgDiarios.SelectedRows[0].Cells[0].Value);
-                usuarioNegocio.EliminarDiario(iIdDiario);
-                CargarDiarios(); 
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un registro para eliminar.");
-            }
-        }
+				txtNombreDiario.Enabled = true;
+                btnAgregar.Enabled = false;
+                btnEliminar.Enabled = false;
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            btnEditar.Text = "✏ Guardar";
-
-            if (dtgDiarios.SelectedRows.Count > 0)
-            {
-                int iIdDiario = Convert.ToInt32(dtgDiarios.SelectedRows[0].Cells[0].Value);
-                string sNuevoNombreDiario = txtNombreDiario.Text;
-
-                bool bEditado = usuarioNegocio.EditarDiario(iIdDiario, sNuevoNombreDiario);
-
-                if (bEditado)
+                if (btnEditar.Text == "✏ Editar")
                 {
-                    MessageBox.Show("Registro actualizado correctamente.");
-                    CargarDiarios();
-                }
-                else
-                {
-                    MessageBox.Show("Error al actualizar el registro.");
-                }
-                
-            }
-            else { 
+                    txtNombreDiario.Focus();
+				}
+				if (btnEditar.Text == "✏ Guardar")
+				{
+					int iIdDiario = Convert.ToInt32(dtgDiarios.SelectedRows[0].Cells[0].Value);
+					string sNuevoNombreDiario = txtNombreDiario.Text;
+					bool bEditado = usuarioNegocio.EditarDiario(iIdDiario, sNuevoNombreDiario);
+
+					if (bEditado)
+					{
+						MessageBox.Show("Registro actualizado correctamente.");
+						CargarDiarios();
+					}
+					else
+					{
+						MessageBox.Show("Error al actualizar el registro.");
+					}
+				}
+				btnEditar.Text = "✏ Guardar";
+			}
+			else { 
                     MessageBox.Show("Por favor, selecciona un registro para editar.");
             }
         }
@@ -158,15 +181,38 @@ namespace AGENCIADIARIOS
             // Verifica que el índice de la fila sea válido (evita errores al hacer clic en el encabezado)
             if (e.RowIndex >= 0)
             {
-                // Selecciona la fila actual
-                DataGridViewRow filaSeleccionada = dtgDiarios.Rows[e.RowIndex];
+                if (btnAgregar.Text == "Agregar")
+                {
 
-                // Asigna el valor de la celda "nombreDiario" al TextBox
-                txtNombreDiario.Text = filaSeleccionada.Cells["vchNombreDiario"].Value.ToString();
+                }
+                else {
+                    // Selecciona la fila actual
+                    DataGridViewRow filaSeleccionada = dtgDiarios.Rows[e.RowIndex];
+
+                    // Asigna el valor de la celda "nombreDiario" al TextBox
+                    txtNombreDiario.Text = filaSeleccionada.Cells["NOMBRE DIARIO"].Value.ToString();
+                }
+                
             }
         }
 
         private void lblNombreUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtNombreDiario.Text = "";
+            btnAgregar.Enabled = true;
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnAgregar.Text = "Nuevo";
+            txtNombreDiario.Enabled = false;
+            btnEditar.Text = "Editar";
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }
