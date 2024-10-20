@@ -13,22 +13,38 @@ namespace capaDatos
 
         public clsConexion()
         {
-            string cadenaConexion = "Server=DESKTOP-FJAOIAQ;Database=BD_VENTA_DIARIOS;Trusted_Connection=True;";
+            string cadenaConexion = "Data Source=.;Initial Catalog=BD_VENTA_DIARIOS;Integrated Security=True;";
             conexion = new SqlConnection(cadenaConexion);
         }
 
         public SqlConnection AbrirConexion()
         {
-            if (conexion.State == System.Data.ConnectionState.Closed)
-                conexion.Open();
-            Console.WriteLine("CONEXIÓN ABIERTA");
+            try
+            {
+                if (conexion.State == System.Data.ConnectionState.Closed)
+                    conexion.Open();
+            }
+            catch (SqlException ex)
+            {
+                // Mostrar mensaje de error si falla la conexión
+                throw new Exception("Error al conectar con el servidor: " + ex.Message);
+            }
+
             return conexion;
         }
 
         public void CerrarConexion()
         {
-            if (conexion.State == System.Data.ConnectionState.Open)
-                conexion.Close();
+            try
+            {
+                if (conexion.State == System.Data.ConnectionState.Open)
+                    conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                // Mostrar mensaje de error si falla el cierre de la conexión
+                throw new Exception("Error al cerrar la conexión con el servidor: " + ex.Message);
+            }
         }
     }
 }

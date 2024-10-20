@@ -30,7 +30,7 @@ namespace AGENCIADIARIOS
 
             UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
             string mensajeValidacion = usuarioNegocio.ValidarUsuario(usuario, contraseña);
-
+    
             // Verificar si el acceso fue concedido
             if (mensajeValidacion == "Acceso concedido.")
             {

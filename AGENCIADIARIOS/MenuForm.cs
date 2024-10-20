@@ -48,16 +48,28 @@ namespace AGENCIADIARIOS
 
         private void maestroDeDiariosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            frmMaestroDiarios DiariosForm = new frmMaestroDiarios();
+            DiariosForm.Show();
         }
 
         private void maestroDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClientesForm clientesForm = new ClientesForm();
-            ClientesNegocio clientesNegocio = new ClientesNegocio();
-            clientesForm.Show();
-            clientesNegocio.ListarClientes();
-            this.Hide();
+  
+                ClientesForm clientesForm = new ClientesForm();
+                ClientesNegocio clientesNegocio = new ClientesNegocio();
+                clientesForm.Show();
+                clientesNegocio.ListarClientes();
+        }
+
+        private void toolStripDropDownButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
         }
     }
 }

@@ -1,9 +1,0 @@
-C:\Users\Usuario\source\repos\AGENCIADIARIOS\AGENCIADIARIOS\bin\Debug\AGENCIADIARIOS.exe.config
-C:\Users\Usuario\source\repos\AGENCIADIARIOS\AGENCIADIARIOS\bin\Debug\AGENCIADIARIOS.exe
-C:\Users\Usuario\source\repos\AGENCIADIARIOS\AGENCIADIARIOS\bin\Debug\AGENCIADIARIOS.pdb
-C:\Users\Usuario\source\repos\AGENCIADIARIOS\AGENCIADIARIOS\obj\Debug\AGENCIADIARIOS.csproj.AssemblyReference.cache
-C:\Users\Usuario\source\repos\AGENCIADIARIOS\AGENCIADIARIOS\obj\Debug\AGENCIADIARIOS.Properties.Resources.resources
-C:\Users\Usuario\source\repos\AGENCIADIARIOS\AGENCIADIARIOS\obj\Debug\AGENCIADIARIOS.csproj.GenerateResource.cache
-C:\Users\Usuario\source\repos\AGENCIADIARIOS\AGENCIADIARIOS\obj\Debug\AGENCIADIARIOS.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\source\repos\AGENCIADIARIOS\AGENCIADIARIOS\obj\Debug\AGENCIADIARIOS.exe
-C:\Users\Usuario\source\repos\AGENCIADIARIOS\AGENCIADIARIOS\obj\Debug\AGENCIADIARIOS.pdb

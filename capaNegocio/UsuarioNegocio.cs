@@ -8,7 +8,7 @@ namespace capaNegocio
     {   
         //CAMBIAR EL SERVIDOR Y LA BASE DE DATOS DE ACUERDO A DONDE SE CORRA EL PROGRAMA
 
-        private string connectionString = "Data Source=LAPTOP-1KOC4VAP;Initial Catalog=BD_VENTA_DIARIOS;Integrated Security=True";
+        private string connectionString = "Data Source=.;Initial Catalog=BD_VENTA_DIARIOS;Integrated Security=True;";
 
         public string ValidarUsuario(string usuario, string contraseña)
         {

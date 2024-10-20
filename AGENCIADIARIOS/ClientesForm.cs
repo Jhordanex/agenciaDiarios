@@ -136,8 +136,8 @@ namespace AGENCIADIARIOS
 
                 txtNombreCliente.Text = dataClientes.Rows[e.RowIndex].Cells["vchNombreCliente"].Value.ToString();
                 txtApellidoCliente.Text = dataClientes.Rows[e.RowIndex].Cells["vchApellidoCliente"].Value.ToString();
-                txtDni.Text = dataClientes.Rows[e.RowIndex].Cells["DNI"].Value.ToString();
-                txtTelefono.Text = dataClientes.Rows[e.RowIndex].Cells["telefono"].Value.ToString();
+                txtDni.Text = dataClientes.Rows[e.RowIndex].Cells["vchDNI"].Value.ToString();
+                txtTelefono.Text = dataClientes.Rows[e.RowIndex].Cells["vchtelefono"].Value.ToString();
                 txtEmail.Text = dataClientes.Rows[e.RowIndex].Cells["vchEmailCliente"].Value.ToString();
 
             }

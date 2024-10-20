@@ -42,13 +42,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ClienteNegocio.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioNegocio.cs" />
+    <Compile Include="VariablesGL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\capaDatos\capaDatos.csproj">
       <Project>{ae732f60-81c0-47c6-957a-e0cb50b76e77}</Project>
       <Name>capaDatos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\capaDatos.dll" />
+    <Content Include="bin\Debug\capaDatos.pdb" />
+    <Content Include="bin\Debug\capaNegocio.dll" />
+    <Content Include="bin\Debug\capaNegocio.pdb" />
+    <Content Include="obj\Debug\capaNegocio.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\capaNegocio.dll" />
+    <Content Include="obj\Debug\capaNegocio.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\capaNego.836DF9B9.Up2Date" />
+    <None Include="obj\Debug\capaNegocio.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\capaNegocio.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

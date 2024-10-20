@@ -11,7 +11,7 @@ namespace capaDatos
 {
     public class ClientesDatos
     {
-        Conexion con = new Conexion();
+        clsConexion con = new clsConexion();
 
         public void AgregarCliente(string txtNombre, string txtApellido, int txtDni, int txtTelefono, string txtEmail)
         {

@@ -13,12 +13,12 @@ using System.Drawing.Drawing2D;
 
 namespace AGENCIADIARIOS
 {
-    public partial class Form1 : Form
+    public partial class frmMaestroDiarios : Form
     {
         Class1 usuarioNegocio = new Class1();
         string snombre;
 
-        public Form1()
+        public frmMaestroDiarios()
         {
             InitializeComponent();
         }
@@ -90,7 +90,7 @@ namespace AGENCIADIARIOS
 
             if (!string.IsNullOrEmpty(sNombreDiario))
             {
-                usuarioNegocio.AgregarDiario(sNombreDiario, 7);
+                usuarioNegocio.AgregarDiario(sNombreDiario, VariablesGL.iUsuarioId);
                 txtNombreDiario.Text = "";
                 txtNombreDiario.Focus();
             }

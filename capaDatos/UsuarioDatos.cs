@@ -4,7 +4,7 @@ namespace capaDatos
 {
     public class UsuariosDatos
     {
-        private Conexion conexion = new Conexion();
+        private clsConexion conexion = new clsConexion();
         private SqlCommand comando = new SqlCommand();
 
         // Método para validar el inicio de sesión

@@ -45,9 +45,10 @@ namespace AGENCIADIARIOS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInicioSesion.AutoSize = true;
             this.lblInicioSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInicioSesion.Location = new System.Drawing.Point(142, 43);
+            this.lblInicioSesion.Location = new System.Drawing.Point(106, 35);
+            this.lblInicioSesion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInicioSesion.Name = "lblInicioSesion";
-            this.lblInicioSesion.Size = new System.Drawing.Size(262, 38);
+            this.lblInicioSesion.Size = new System.Drawing.Size(221, 31);
             this.lblInicioSesion.TabIndex = 0;
             this.lblInicioSesion.Text = "Inicio de Sesion";
             this.lblInicioSesion.Click += new System.EventHandler(this.label1_Click);
@@ -59,9 +60,10 @@ namespace AGENCIADIARIOS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(146, 147);
+            this.lblUsuario.Location = new System.Drawing.Point(110, 119);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(79, 25);
+            this.lblUsuario.Size = new System.Drawing.Size(64, 20);
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "Usuario";
             // 
@@ -72,9 +74,10 @@ namespace AGENCIADIARIOS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(146, 271);
+            this.lblContraseña.Location = new System.Drawing.Point(110, 220);
+            this.lblContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(114, 25);
+            this.lblContraseña.Size = new System.Drawing.Size(92, 20);
             this.lblContraseña.TabIndex = 2;
             this.lblContraseña.Text = "Contraseña";
             // 
@@ -83,9 +86,10 @@ namespace AGENCIADIARIOS
             this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsuario.Location = new System.Drawing.Point(149, 219);
+            this.txtUsuario.Location = new System.Drawing.Point(112, 178);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(270, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(204, 20);
             this.txtUsuario.TabIndex = 3;
             // 
             // txtContraseña
@@ -93,10 +97,11 @@ namespace AGENCIADIARIOS
             this.txtContraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtContraseña.Location = new System.Drawing.Point(151, 341);
+            this.txtContraseña.Location = new System.Drawing.Point(113, 277);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(268, 22);
+            this.txtContraseña.Size = new System.Drawing.Size(202, 20);
             this.txtContraseña.TabIndex = 4;
             // 
             // btnIngresar
@@ -104,9 +109,10 @@ namespace AGENCIADIARIOS
             this.btnIngresar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIngresar.Location = new System.Drawing.Point(149, 415);
+            this.btnIngresar.Location = new System.Drawing.Point(112, 337);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(96, 38);
+            this.btnIngresar.Size = new System.Drawing.Size(72, 31);
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -117,9 +123,10 @@ namespace AGENCIADIARIOS
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(289, 415);
+            this.btnCancelar.Location = new System.Drawing.Point(217, 337);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(96, 38);
+            this.btnCancelar.Size = new System.Drawing.Size(72, 31);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -127,9 +134,9 @@ namespace AGENCIADIARIOS
             // 
             // InicioSesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 495);
+            this.ClientSize = new System.Drawing.Size(443, 402);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContraseña);
@@ -137,7 +144,9 @@ namespace AGENCIADIARIOS
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblInicioSesion);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InicioSesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Form_Load);
             this.ResumeLayout(false);
