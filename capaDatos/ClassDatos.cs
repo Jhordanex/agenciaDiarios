@@ -46,6 +46,7 @@ namespace capaDatos
                 cmd.Parameters.AddWithValue("@idUsuario", idUser);
 
                 SqlDataReader reader = cmd.ExecuteReader();
+
                 if (reader.Read())
                 {
                     nombre = reader["vchNombreUsuario"].ToString();

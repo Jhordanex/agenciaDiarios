@@ -127,6 +127,7 @@ namespace AGENCIADIARIOS
             this.dtgDiarios.Location = new System.Drawing.Point(434, 44);
             this.dtgDiarios.Name = "dtgDiarios";
             this.dtgDiarios.ReadOnly = true;
+            this.dtgDiarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDiarios.Size = new System.Drawing.Size(543, 380);
             this.dtgDiarios.TabIndex = 1;
             this.dtgDiarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDiarios_CellClick);
@@ -161,6 +162,7 @@ namespace AGENCIADIARIOS
             this.Controls.Add(this.dtgDiarios);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMaestroDiarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MAESTRO DE DIARIOS";

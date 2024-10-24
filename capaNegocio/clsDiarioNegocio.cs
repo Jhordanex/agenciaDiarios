@@ -8,7 +8,7 @@ using capaDatos;
 
 namespace capaNegocio
 {
-    public class Class1
+    public class clsDiarioNegocio
     {
         private ClassDatos datos = new ClassDatos();
 
