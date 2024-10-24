@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -46,23 +45,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataClientes = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblNombreUser = new System.Windows.Forms.Label();
+            this.lblSindicato = new System.Windows.Forms.Label();
+            this.cmbSindicato = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(594, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Maestro de Clientes";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbSindicato);
+            this.groupBox1.Controls.Add(this.lblSindicato);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEliminar);
@@ -134,7 +129,7 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtEmail
             // 
@@ -223,41 +218,81 @@
             // 
             // dataClientes
             // 
-            this.dataClientes.AllowUserToAddRows = false;
+            this.dataClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataClientes.ColumnHeadersVisible = false;
-            this.dataClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataClientes.EnableHeadersVisualStyles = false;
-            this.dataClientes.Location = new System.Drawing.Point(631, 110);
+            this.dataClientes.Location = new System.Drawing.Point(649, 122);
             this.dataClientes.Name = "dataClientes";
             this.dataClientes.RowHeadersWidth = 51;
             this.dataClientes.RowTemplate.Height = 24;
-            this.dataClientes.Size = new System.Drawing.Size(810, 378);
+            this.dataClientes.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataClientes.Size = new System.Drawing.Size(792, 366);
             this.dataClientes.TabIndex = 2;
-            this.dataClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataClientes_CellClick);
+            this.dataClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 581);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1429, 36);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblNombreUser
+            // 
+            this.lblNombreUser.AutoSize = true;
+            this.lblNombreUser.Location = new System.Drawing.Point(1348, 591);
+            this.lblNombreUser.Name = "lblNombreUser";
+            this.lblNombreUser.Size = new System.Drawing.Size(44, 16);
+            this.lblNombreUser.TabIndex = 4;
+            this.lblNombreUser.Text = "label1";
+            this.lblNombreUser.Click += new System.EventHandler(this.lblNombreUser_Click);
+            // 
+            // lblSindicato
+            // 
+            this.lblSindicato.AutoSize = true;
+            this.lblSindicato.Location = new System.Drawing.Point(11, 257);
+            this.lblSindicato.Name = "lblSindicato";
+            this.lblSindicato.Size = new System.Drawing.Size(63, 16);
+            this.lblSindicato.TabIndex = 18;
+            this.lblSindicato.Text = "Sindicato";
+            // 
+            // cmbSindicato
+            // 
+            this.cmbSindicato.FormattingEnabled = true;
+            this.cmbSindicato.Items.AddRange(new object[] {
+            "Prueba01",
+            "Prueba02",
+            "Prueba03"});
+            this.cmbSindicato.Location = new System.Drawing.Point(161, 253);
+            this.cmbSindicato.Name = "cmbSindicato";
+            this.cmbSindicato.Size = new System.Drawing.Size(358, 24);
+            this.cmbSindicato.TabIndex = 19;
+            this.cmbSindicato.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1453, 629);
+            this.Controls.Add(this.lblNombreUser);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataClientes);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
             this.Name = "ClientesForm";
-            this.Text = "ClientesForm";
+            this.Text = "Maestro de Clientes";
             this.Load += new System.EventHandler(this.ClientesForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -273,7 +308,11 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView dataClientes;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dataClientes;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblNombreUser;
+        private System.Windows.Forms.ComboBox cmbSindicato;
+        private System.Windows.Forms.Label lblSindicato;
     }
 }

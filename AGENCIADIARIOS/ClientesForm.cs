@@ -1,37 +1,75 @@
-﻿using System;
+﻿using capaNegocio;
+using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace AGENCIADIARIOS
 {
     public partial class ClientesForm : Form
     {
-        private int selectedIdCliente; // Variable para almacenar el ID del cliente seleccionado
+        private int selectedIdCliente;
+        int UsuarioID;
 
         public ClientesForm()
         {
             InitializeComponent();
-            dataClientes.CellClick += new DataGridViewCellEventHandler(dataClientes_CellClick); // Asignar el evento
-            dataClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Seleccionar toda la fila
+            dataClientes.CellClick += new DataGridViewCellEventHandler(dataClientes_CellClick);
+            dataClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataClientes.AllowUserToAddRows = false;
-            dataClientes.ReadOnly = false; // Asegúrate de que no esté en modo solo lectura
-
+            dataClientes.ReadOnly = true; 
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         ClientesNegocio clientesNegocio = new ClientesNegocio();
+
         private void CargarClientes()
         {
             try
             {
-                dataClientes.DataSource = clientesNegocio.ListarClientes();
+                DataTable clientes = clientesNegocio.ListarClientes();
+
+                //Jala el ID para que llene el campo del usuario de registro
+                clientes.Columns.Add("Usuario ID", typeof(int));
+                foreach (DataRow row in clientes.Rows)
+                {
+                    row["Usuario ID"] = VariablesGL.idUsuario;  
+                }
+
+                dataClientes.DataSource = clientes;
                 dataClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                if (clientes.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron clientes.");
+                    return;
+                }
+                dataClientes.Columns["Usuario ID"].HeaderText = "Usuario Registro";
+                dataClientes.Columns["idCliente"].HeaderText = "ID Cliente";
+                dataClientes.Columns["vchNombreCliente"].HeaderText = "Nombre";
+                dataClientes.Columns["vchApellidoCliente"].HeaderText = "Apellido";
+                dataClientes.Columns["vchDNI"].HeaderText = "DNI";
+                dataClientes.Columns["vchTelefono"].HeaderText = "Teléfono";
+                dataClientes.Columns["vchEmailCliente"].HeaderText = "Email";
+                dataClientes.Columns["dFechaModificacion"].HeaderText = "Fecha Modificación";
+                dataClientes.Columns["vchSindicato"].HeaderText = "Sindicato";
 
 
+                dataClientes.Columns["idCliente"].Visible = false;
 
+                btnEditar.Enabled = dataClientes.SelectedRows.Count > 0;
+                btnEliminar.Enabled = dataClientes.SelectedRows.Count > 0;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar la lista de clientes: " + ex.Message);
             }
+        }
+
+        private void ClientesForm_Load(object sender, EventArgs e)
+        {
+            CargarClientes();
+            lblNombreUser.Text = VariablesGL.Usuario;
         }
 
         private void LimpiarCampos()
@@ -42,9 +80,11 @@ namespace AGENCIADIARIOS
             txtDni.Clear();
             txtTelefono.Clear();
             txtEmail.Clear();
+            cmbSindicato.SelectedIndex = -1;  // Deselecciona cualquier opción
+            selectedIdCliente = 0; 
         }
 
-        private void btnAgregar_Click_1(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -52,36 +92,39 @@ namespace AGENCIADIARIOS
                     string.IsNullOrEmpty(txtApellidoCliente.Text) ||
                     string.IsNullOrEmpty(txtDni.Text) ||
                     string.IsNullOrEmpty(txtEmail.Text) ||
-                    string.IsNullOrEmpty(txtTelefono.Text))
+                    string.IsNullOrEmpty(txtTelefono.Text) ||
+                    string.IsNullOrEmpty(cmbSindicato.Text))
+
                 {
                     MessageBox.Show("Por favor, llenar todos los campos requeridos");
                     return;
                 }
 
+
                 clientesNegocio.AgregarCliente(
+                    VariablesGL.idUsuario,
                     txtNombreCliente.Text,
                     txtApellidoCliente.Text,
                     Convert.ToInt32(txtDni.Text),
                     Convert.ToInt32(txtTelefono.Text),
-                    txtEmail.Text
-                    //iUsuarioRegistro
+                    txtEmail.Text,
+                    cmbSindicato.Text
+                    
+
+
                 );
 
                 MessageBox.Show("Cliente agregado exitosamente.");
 
                 CargarClientes();
                 LimpiarCampos();
+
+                btnAgregar.Enabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al agregar el cliente: " + ex.Message);
             }
-        }
-        private void ClientesForm_Load(object sender, EventArgs e)
-        {
-
-            CargarClientes();
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -92,22 +135,21 @@ namespace AGENCIADIARIOS
                     string.IsNullOrEmpty(txtApellidoCliente.Text) ||
                     string.IsNullOrEmpty(txtDni.Text) ||
                     string.IsNullOrEmpty(txtEmail.Text) ||
-                    string.IsNullOrEmpty(txtTelefono.Text))
+                    string.IsNullOrEmpty(txtTelefono.Text) ||
+                    string.IsNullOrEmpty(cmbSindicato.Text))
                 {
                     MessageBox.Show("Por favor, llenar todos los campos requeridos");
                     return;
                 }
 
-                
-                // Llama al método para editar el cliente usando el ID almacenado
-                
                 clientesNegocio.EditarCliente(
-                    selectedIdCliente, // Usa la variable almacenada
+                    selectedIdCliente,
                     txtNombreCliente.Text,
                     txtApellidoCliente.Text,
                     Convert.ToInt32(txtDni.Text),
                     Convert.ToInt32(txtTelefono.Text),
-                    txtEmail.Text
+                    txtEmail.Text,
+                    cmbSindicato.Text
                 );
 
                 MessageBox.Show("Cliente editado exitosamente.");
@@ -122,14 +164,31 @@ namespace AGENCIADIARIOS
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            MenuForm menuForm = new MenuForm();
-            menuForm.Show();
-            this.Hide();
+            bool camposVacios = string.IsNullOrEmpty(txtNombreCliente.Text) &&
+                                string.IsNullOrEmpty(txtApellidoCliente.Text) &&
+                                string.IsNullOrEmpty(txtDni.Text) &&
+                                string.IsNullOrEmpty(txtTelefono.Text) &&
+                                string.IsNullOrEmpty(txtEmail.Text) &&
+                                string.IsNullOrEmpty(cmbSindicato.Text);
+
+            if (camposVacios && selectedIdCliente == 0)
+            {
+                MenuForm menuForm = new MenuForm();
+                menuForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                LimpiarCampos();
+
+                btnAgregar.Enabled = true;
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
         }
 
         private void dataClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex >= 0)
             {
                 selectedIdCliente = Convert.ToInt32(dataClientes.Rows[e.RowIndex].Cells["idCliente"].Value);
@@ -137,9 +196,14 @@ namespace AGENCIADIARIOS
                 txtNombreCliente.Text = dataClientes.Rows[e.RowIndex].Cells["vchNombreCliente"].Value.ToString();
                 txtApellidoCliente.Text = dataClientes.Rows[e.RowIndex].Cells["vchApellidoCliente"].Value.ToString();
                 txtDni.Text = dataClientes.Rows[e.RowIndex].Cells["vchDNI"].Value.ToString();
-                txtTelefono.Text = dataClientes.Rows[e.RowIndex].Cells["vchtelefono"].Value.ToString();
+                txtTelefono.Text = dataClientes.Rows[e.RowIndex].Cells["vchTelefono"].Value.ToString();
                 txtEmail.Text = dataClientes.Rows[e.RowIndex].Cells["vchEmailCliente"].Value.ToString();
+                cmbSindicato.Text = dataClientes.Rows[e.RowIndex].Cells["vchSindicato"].Value.ToString();
 
+                btnEditar.Enabled = true;
+                btnEliminar.Enabled = true;
+
+                btnAgregar.Enabled = false;
             }
         }
 
@@ -147,30 +211,48 @@ namespace AGENCIADIARIOS
         {
             try
             {
-                if (selectedIdCliente <= 0) // Verificar si hay un cliente seleccionado
+                if (selectedIdCliente <= 0)
                 {
                     MessageBox.Show("Por favor, seleccione un cliente para eliminar.");
                     return;
                 }
 
-                // Confirmar la eliminación
                 var confirmResult = MessageBox.Show("¿Está seguro de que desea eliminar este cliente?",
-                                                     "Confirmar eliminación",
-                                                     MessageBoxButtons.YesNo,
-                                                     MessageBoxIcon.Question);
+                                                    "Confirmar eliminación",
+                                                    MessageBoxButtons.YesNo,
+                                                    MessageBoxIcon.Question);
                 if (confirmResult == DialogResult.Yes)
                 {
-                    clientesNegocio.EliminarCliente(selectedIdCliente); // Llamar al método que elimina el cliente
-
+                    clientesNegocio.EliminarCliente(selectedIdCliente);
                     MessageBox.Show("Cliente eliminado exitosamente.");
-                    CargarClientes(); // Volver a cargar la lista de clientes
-                    LimpiarCampos(); // Limpiar los campos
+                    CargarClientes();
+                    LimpiarCampos();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al eliminar el cliente: " + ex.Message);
             }
+        }
+
+        private void dataClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblNombreUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
