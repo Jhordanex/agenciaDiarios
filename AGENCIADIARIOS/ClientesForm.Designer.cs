@@ -89,8 +89,8 @@
             "Prueba01",
             "Prueba02",
             "Prueba03"});
-            this.cmbSindicato.Location = new System.Drawing.Point(161, 272);
-            this.cmbSindicato.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSindicato.Location = new System.Drawing.Point(161, 258);
+            this.cmbSindicato.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSindicato.Name = "cmbSindicato";
             this.cmbSindicato.Size = new System.Drawing.Size(476, 24);
             this.cmbSindicato.TabIndex = 19;
@@ -257,7 +257,7 @@
             this.dataClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataClientes.Location = new System.Drawing.Point(841, 108);
-            this.dataClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataClientes.Margin = new System.Windows.Forms.Padding(4);
             this.dataClientes.Name = "dataClientes";
             this.dataClientes.RowHeadersWidth = 51;
             this.dataClientes.RowTemplate.Height = 24;
@@ -270,7 +270,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
             this.pictureBox1.Location = new System.Drawing.Point(16, 715);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1905, 44);
             this.pictureBox1.TabIndex = 3;
@@ -296,7 +296,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataClientes);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientesForm";
             this.Text = "Maestro de Clientes";
             this.Load += new System.EventHandler(this.ClientesForm_Load);

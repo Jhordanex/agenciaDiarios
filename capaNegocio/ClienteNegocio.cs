@@ -15,9 +15,11 @@ public class ClientesNegocio
         return datos.ListarClientes();
     }
 
-   public void EditarCliente(int idCliente, string txtNombre, string txtApellido, int txtDni, int txtTelefono, string txtEmail, string cmbSindicato)
+   public void EditarCliente(
+       int idCliente, string txtNombre, string txtApellido, int txtDni, int txtTelefono,
+       string txtEmail, string cmbSindicato, int iUsuarioModificacion)
     {
-        datos.EditarCliente(idCliente,txtNombre, txtApellido, txtDni, txtTelefono, txtEmail,cmbSindicato);
+        datos.EditarCliente(idCliente,txtNombre, txtApellido, txtDni, txtTelefono, txtEmail,cmbSindicato, iUsuarioModificacion);
     }
 
     public void EliminarCliente(int idCliente)

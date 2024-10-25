@@ -9,7 +9,6 @@ namespace AGENCIADIARIOS
     public partial class ClientesForm : Form
     {
         private int selectedIdCliente;
-        int UsuarioID;
 
         public ClientesForm()
         {
@@ -30,12 +29,14 @@ namespace AGENCIADIARIOS
             {
                 DataTable clientes = clientesNegocio.ListarClientes();
 
+                //int iUsuarioRegistro = VariablesGL.idUsuario;
+
                 //Jala el ID para que llene el campo del usuario de registro
-                clientes.Columns.Add("Usuario ID", typeof(int));
-                foreach (DataRow row in clientes.Rows)
-                {
-                    row["Usuario ID"] = VariablesGL.idUsuario;  
-                }
+                //clientes.Columns.Add("Usuario ID", typeof(int));
+                //foreach (DataRow row in clientes.Rows)
+                //{
+                //    row["Usuario ID"] = VariablesGL.idUsuario;  
+                //}
 
                 dataClientes.DataSource = clientes;
                 dataClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -44,7 +45,8 @@ namespace AGENCIADIARIOS
                     MessageBox.Show("No se encontraron clientes.");
                     return;
                 }
-                dataClientes.Columns["Usuario ID"].HeaderText = "Usuario Registro";
+                //dataClientes.Columns["Usuario ID"].HeaderText = "Usuario Registro";
+                dataClientes.Columns["iUsuarioRegistro"].HeaderText = "Usuario Registro";
                 dataClientes.Columns["idCliente"].HeaderText = "ID Cliente";
                 dataClientes.Columns["vchNombreCliente"].HeaderText = "Nombre";
                 dataClientes.Columns["vchApellidoCliente"].HeaderText = "Apellido";
@@ -53,6 +55,8 @@ namespace AGENCIADIARIOS
                 dataClientes.Columns["vchEmailCliente"].HeaderText = "Email";
                 dataClientes.Columns["dFechaModificacion"].HeaderText = "Fecha Modificación";
                 dataClientes.Columns["vchSindicato"].HeaderText = "Sindicato";
+
+
 
 
                 dataClientes.Columns["idCliente"].Visible = false;
@@ -88,6 +92,8 @@ namespace AGENCIADIARIOS
         {
             try
             {
+                int usuarioRegistro = VariablesGL.idUsuario;
+
                 if (string.IsNullOrEmpty(txtNombreCliente.Text) ||
                     string.IsNullOrEmpty(txtApellidoCliente.Text) ||
                     string.IsNullOrEmpty(txtDni.Text) ||
@@ -102,7 +108,7 @@ namespace AGENCIADIARIOS
 
 
                 clientesNegocio.AgregarCliente(
-                    VariablesGL.idUsuario,
+                    usuarioRegistro,
                     txtNombreCliente.Text,
                     txtApellidoCliente.Text,
                     Convert.ToInt32(txtDni.Text),
@@ -131,6 +137,8 @@ namespace AGENCIADIARIOS
         {
             try
             {
+                int usuarioModifacion = VariablesGL.idUsuario;
+
                 if (string.IsNullOrEmpty(txtNombreCliente.Text) ||
                     string.IsNullOrEmpty(txtApellidoCliente.Text) ||
                     string.IsNullOrEmpty(txtDni.Text) ||
@@ -149,7 +157,8 @@ namespace AGENCIADIARIOS
                     Convert.ToInt32(txtDni.Text),
                     Convert.ToInt32(txtTelefono.Text),
                     txtEmail.Text,
-                    cmbSindicato.Text
+                    cmbSindicato.Text,
+                    usuarioModifacion
                 );
 
                 MessageBox.Show("Cliente editado exitosamente.");

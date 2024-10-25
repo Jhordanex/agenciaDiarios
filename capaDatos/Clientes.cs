@@ -61,7 +61,9 @@ namespace capaDatos
             return tabla;
         }
 
-        public void EditarCliente(int idCliente, string txtNombre, string txtApellido, int txtDni, int txtTelefono, string txtEmail, string cmbSindicato)
+        public void EditarCliente(
+            int idCliente, string txtNombre, string txtApellido, int txtDni, int txtTelefono, 
+            string txtEmail, string cmbSindicato, int iUsuarioModificacion)
         {
             try
             {
@@ -75,6 +77,10 @@ namespace capaDatos
                     cmd.Parameters.AddWithValue("@vchTelefono", txtTelefono);
                     cmd.Parameters.AddWithValue("@vchEmailCliente", txtEmail);
                     cmd.Parameters.AddWithValue("@vchSindicato", cmbSindicato);
+                    cmd.Parameters.AddWithValue("@iUsuarioModificacion", iUsuarioModificacion);
+
+
+
 
 
                     cmd.ExecuteNonQuery();
