@@ -90,7 +90,7 @@ namespace AGENCIADIARIOS
 
             if (!string.IsNullOrEmpty(sNombreDiario))
             {
-                usuarioNegocio.AgregarDiario(sNombreDiario, VariablesGL.iUsuarioId);
+                usuarioNegocio.AgregarDiario(sNombreDiario, VariablesGL.idUsuario);
                 txtNombreDiario.Text = "";
                 txtNombreDiario.Focus();
             }
