@@ -116,8 +116,6 @@ namespace AGENCIADIARIOS
                     txtEmail.Text,
                     cmbSindicato.Text
                     
-
-
                 );
 
                 MessageBox.Show("Cliente agregado exitosamente.");
