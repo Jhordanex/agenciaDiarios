@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbSindicato = new System.Windows.Forms.ComboBox();
+            this.lblSindicato = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -47,8 +49,6 @@
             this.dataClientes = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNombreUser = new System.Windows.Forms.Label();
-            this.lblSindicato = new System.Windows.Forms.Label();
-            this.cmbSindicato = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,12 +73,38 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(22, 108);
+            this.groupBox1.Location = new System.Drawing.Point(21, 108);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(584, 380);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(683, 380);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Maestro de Clientes";
+            // 
+            // cmbSindicato
+            // 
+            this.cmbSindicato.FormattingEnabled = true;
+            this.cmbSindicato.Items.AddRange(new object[] {
+            "Prueba01",
+            "Prueba02",
+            "Prueba03"});
+            this.cmbSindicato.Location = new System.Drawing.Point(161, 272);
+            this.cmbSindicato.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSindicato.Name = "cmbSindicato";
+            this.cmbSindicato.Size = new System.Drawing.Size(476, 24);
+            this.cmbSindicato.TabIndex = 19;
+            this.cmbSindicato.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // lblSindicato
+            // 
+            this.lblSindicato.AutoSize = true;
+            this.lblSindicato.Location = new System.Drawing.Point(12, 263);
+            this.lblSindicato.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSindicato.Name = "lblSindicato";
+            this.lblSindicato.Size = new System.Drawing.Size(63, 16);
+            this.lblSindicato.TabIndex = 18;
+            this.lblSindicato.Text = "Sindicato";
             // 
             // label7
             // 
@@ -91,8 +117,9 @@
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(345, 303);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(76, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(76, 30);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -101,6 +128,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(268, 302);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(71, 30);
             this.btnEliminar.TabIndex = 15;
@@ -111,6 +139,7 @@
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(191, 302);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(71, 30);
             this.btnEditar.TabIndex = 14;
@@ -122,7 +151,8 @@
             // 
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnAgregar.ImageKey = "(ninguno)";
-            this.btnAgregar.Location = new System.Drawing.Point(114, 302);
+            this.btnAgregar.Location = new System.Drawing.Point(115, 302);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(71, 30);
             this.btnAgregar.TabIndex = 13;
@@ -134,47 +164,52 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(161, 218);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(358, 22);
+            this.txtEmail.Size = new System.Drawing.Size(359, 22);
             this.txtEmail.TabIndex = 9;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(161, 171);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(178, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(177, 22);
             this.txtTelefono.TabIndex = 8;
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(161, 136);
+            this.txtDni.Location = new System.Drawing.Point(161, 135);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDni.Multiline = true;
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(178, 22);
+            this.txtDni.Size = new System.Drawing.Size(177, 22);
             this.txtDni.TabIndex = 7;
             // 
             // txtApellidoCliente
             // 
-            this.txtApellidoCliente.Location = new System.Drawing.Point(161, 93);
+            this.txtApellidoCliente.Location = new System.Drawing.Point(161, 94);
+            this.txtApellidoCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtApellidoCliente.Multiline = true;
             this.txtApellidoCliente.Name = "txtApellidoCliente";
-            this.txtApellidoCliente.Size = new System.Drawing.Size(178, 22);
+            this.txtApellidoCliente.Size = new System.Drawing.Size(177, 22);
             this.txtApellidoCliente.TabIndex = 6;
             // 
             // txtNombreCliente
             // 
             this.txtNombreCliente.Location = new System.Drawing.Point(161, 54);
+            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreCliente.Multiline = true;
             this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(178, 22);
+            this.txtNombreCliente.Size = new System.Drawing.Size(177, 22);
             this.txtNombreCliente.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 218);
+            this.label6.Location = new System.Drawing.Point(11, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 16);
             this.label6.TabIndex = 4;
@@ -183,7 +218,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 177);
+            this.label5.Location = new System.Drawing.Point(5, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 16);
             this.label5.TabIndex = 3;
@@ -192,7 +227,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 136);
+            this.label4.Location = new System.Drawing.Point(11, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 16);
             this.label4.TabIndex = 2;
@@ -210,7 +245,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 61);
+            this.label2.Location = new System.Drawing.Point(5, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 16);
             this.label2.TabIndex = 0;
@@ -221,65 +256,47 @@
             this.dataClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataClientes.Location = new System.Drawing.Point(649, 122);
+            this.dataClientes.Location = new System.Drawing.Point(841, 108);
+            this.dataClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataClientes.Name = "dataClientes";
             this.dataClientes.RowHeadersWidth = 51;
             this.dataClientes.RowTemplate.Height = 24;
             this.dataClientes.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dataClientes.Size = new System.Drawing.Size(792, 366);
+            this.dataClientes.Size = new System.Drawing.Size(1056, 450);
             this.dataClientes.TabIndex = 2;
             this.dataClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 581);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 715);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1429, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(1905, 44);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
             // lblNombreUser
             // 
             this.lblNombreUser.AutoSize = true;
-            this.lblNombreUser.Location = new System.Drawing.Point(1348, 591);
+            this.lblNombreUser.Location = new System.Drawing.Point(1797, 727);
+            this.lblNombreUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreUser.Name = "lblNombreUser";
             this.lblNombreUser.Size = new System.Drawing.Size(44, 16);
             this.lblNombreUser.TabIndex = 4;
             this.lblNombreUser.Text = "label1";
             this.lblNombreUser.Click += new System.EventHandler(this.lblNombreUser_Click);
             // 
-            // lblSindicato
-            // 
-            this.lblSindicato.AutoSize = true;
-            this.lblSindicato.Location = new System.Drawing.Point(11, 257);
-            this.lblSindicato.Name = "lblSindicato";
-            this.lblSindicato.Size = new System.Drawing.Size(63, 16);
-            this.lblSindicato.TabIndex = 18;
-            this.lblSindicato.Text = "Sindicato";
-            // 
-            // cmbSindicato
-            // 
-            this.cmbSindicato.FormattingEnabled = true;
-            this.cmbSindicato.Items.AddRange(new object[] {
-            "Prueba01",
-            "Prueba02",
-            "Prueba03"});
-            this.cmbSindicato.Location = new System.Drawing.Point(161, 253);
-            this.cmbSindicato.Name = "cmbSindicato";
-            this.cmbSindicato.Size = new System.Drawing.Size(358, 24);
-            this.cmbSindicato.TabIndex = 19;
-            this.cmbSindicato.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1453, 629);
+            this.ClientSize = new System.Drawing.Size(1937, 774);
             this.Controls.Add(this.lblNombreUser);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataClientes);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ClientesForm";
             this.Text = "Maestro de Clientes";
             this.Load += new System.EventHandler(this.ClientesForm_Load);
