@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using capaDatos; 
 
 namespace capaNegocio
 {
     public class UsuarioNegocio
     {
-        private string connectionString = "Data Source=JHORDANEX;Initial Catalog=BD_VENTA_DIARIOS;Integrated Security=True;";
-
         public string ValidarUsuario(string usuario, string contraseña)
         {
             if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contraseña))
@@ -17,44 +16,39 @@ namespace capaNegocio
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                // Instancia de clsConexion
+                clsConexion conexionDB = new clsConexion();
+                SqlConnection connection = conexionDB.AbrirConexion();
+
+                using (SqlCommand command = new SqlCommand("SP_VALIDAR_USUARIO", connection))
                 {
-                    connection.Open();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Usuario", usuario);
+                    command.Parameters.AddWithValue("@Contraseña", contraseña);
 
-
-                    using (SqlCommand command = new SqlCommand("SP_VALIDAR_USUARIO", connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.AddWithValue("@Usuario", usuario);
-                        command.Parameters.AddWithValue("@Contraseña", contraseña);
-
-
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        if (reader.Read())
                         {
-                            if (reader.Read())
+                            int usuarioId = reader.GetInt32(0);
+                            string usuarioIngresado = reader.GetString(1);
+                            string contraseñaAlmacenada = reader.GetString(2);
+
+                            if (contraseñaAlmacenada == contraseña)
                             {
-                                int usuarioId = reader.GetInt32(0);  
-                                string usuarioingresado = reader.GetString(1);
-                                string contraseñaAlmacenada = reader.GetString(2);
+                                VariablesGL.Usuario = usuarioIngresado;
+                                VariablesGL.idUsuario = usuarioId;
 
-                                if (contraseñaAlmacenada == contraseña)
-                                {
-
-                                    VariablesGL.Usuario = usuarioingresado;
-                                    VariablesGL.idUsuario = usuarioId;
-
-                                    return "Acceso concedido.";
-                                }
-                                else
-                                {
-                                    return "Contraseña incorrecta.";
-                                }
+                                return "Acceso concedido.";
                             }
                             else
                             {
-                                return "Usuario no encontrado.";
+                                return "Contraseña incorrecta.";
                             }
+                        }
+                        else
+                        {
+                            return "Usuario no encontrado.";
                         }
                     }
                 }
@@ -62,6 +56,12 @@ namespace capaNegocio
             catch (Exception ex)
             {
                 return $"Error al intentar conectar con la base de datos: {ex.Message}";
+            }
+            finally
+            {
+                clsConexion conexion = new clsConexion();
+                conexion.CerrarConexion();
+            
             }
         }
     }

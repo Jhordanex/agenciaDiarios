@@ -10,6 +10,7 @@ public class ClientesNegocio
         datos.AgregarCliente(iUsuario,txtNombre, txtApellido, txtDni, txtTelefono, txtEmail,cmbSindicato);
     }
 
+
    public DataTable ListarClientes()
     {
         return datos.ListarClientes();
