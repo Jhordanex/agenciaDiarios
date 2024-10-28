@@ -84,6 +84,7 @@
             // 
             // cmbSindicato
             // 
+            this.cmbSindicato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSindicato.FormattingEnabled = true;
             this.cmbSindicato.Items.AddRange(new object[] {
             "Prueba01",
@@ -287,7 +288,7 @@
             this.lblNombreUser.Text = "label1";
             this.lblNombreUser.Click += new System.EventHandler(this.lblNombreUser_Click);
             // 
-            // ClientesForm
+            // frmMaestroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -297,7 +298,7 @@
             this.Controls.Add(this.dataClientes);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ClientesForm";
+            this.Name = "frmMaestroClientes";
             this.Text = "Maestro de Clientes";
             this.Load += new System.EventHandler(this.ClientesForm_Load);
             this.groupBox1.ResumeLayout(false);
