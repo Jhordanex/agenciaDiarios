@@ -70,7 +70,7 @@ namespace AGENCIADIARIOS
             }
         }
 
-        private void ClientesForm_Load(object sender, EventArgs e)
+        private void frmMaestroClientes_Load(object sender, EventArgs e)
         {
             CargarClientes();
             lblNombreUser.Text = VariablesGL.Usuario;
@@ -180,7 +180,7 @@ namespace AGENCIADIARIOS
 
             if (camposVacios && selectedIdCliente == 0)
             {
-                MenuForm menuForm = new MenuForm();
+                frmMenuInicio menuForm = new frmMenuInicio();
                 menuForm.Show();
                 this.Hide();
             }
@@ -258,6 +258,11 @@ namespace AGENCIADIARIOS
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

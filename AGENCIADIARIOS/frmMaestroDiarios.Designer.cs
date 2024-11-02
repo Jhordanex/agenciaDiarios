@@ -145,10 +145,12 @@ namespace AGENCIADIARIOS
             // lblNombreUser
             // 
             this.lblNombreUser.AutoSize = true;
-            this.lblNombreUser.BackColor = System.Drawing.Color.White;
+            this.lblNombreUser.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblNombreUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUser.ForeColor = System.Drawing.Color.White;
             this.lblNombreUser.Location = new System.Drawing.Point(901, 459);
             this.lblNombreUser.Name = "lblNombreUser";
-            this.lblNombreUser.Size = new System.Drawing.Size(35, 13);
+            this.lblNombreUser.Size = new System.Drawing.Size(41, 13);
             this.lblNombreUser.TabIndex = 6;
             this.lblNombreUser.Text = "label3";
             // 
@@ -161,8 +163,9 @@ namespace AGENCIADIARIOS
             this.Controls.Add(this.dtgDiarios);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox3);
+            this.MaximizeBox = false;
             this.Name = "frmMaestroDiarios";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MAESTRO DE DIARIOS";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

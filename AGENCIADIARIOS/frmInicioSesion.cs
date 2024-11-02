@@ -34,7 +34,7 @@ namespace AGENCIADIARIOS
             // Verificar si el acceso fue concedido
             if (mensajeValidacion == "Acceso concedido.")
             {
-                MenuForm menuForm = new MenuForm();
+                frmMenuInicio menuForm = new frmMenuInicio();
                 menuForm.Show();
                 this.Hide();
             }
