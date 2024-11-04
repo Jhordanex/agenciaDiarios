@@ -36,5 +36,9 @@ namespace capaNegocio
         {
             return datos.EliminarDiario(iIdDiario);
         }
+        public void AgregarIventarioDarios(int diarioSeleccionado, int stock,int cantidadConsumida,double precioDia)
+        {
+            datos.AgregarDiario(diarioSeleccionado, stock, cantidadConsumida, precioDia);
+        }
     }
 }

@@ -92,6 +92,35 @@ namespace capaDatos
             }
         }
 
+        public void AgregarDiario(int diarioSeleccionado, int stock,int cantidadConsumida,double precioDia)
+        {
+            try
+            {
+                AbrirConexion();
+                using (SqlCommand comando = new SqlCommand("SP_AGREGAR_INVENTARIO_DIARIO", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    comando.Parameters.AddWithValue("@peiCantidadStock", stock);
+                    comando.Parameters.AddWithValue("@peiCantidadConsumida", cantidadConsumida);
+                    comando.Parameters.AddWithValue("@pedPrecioDia", precioDia);
+                    comando.Parameters.AddWithValue("@peiIdDiario", diarioSeleccionado);
+
+                    comando.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
+
+
         public string EliminarDiario(int iIdDiario)
         {
             try

@@ -76,6 +76,12 @@
     <Compile Include="frmInicioSesion.Designer.cs">
       <DependentUpon>frmInicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInventarioDiarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventarioDiarios.Designer.cs">
+      <DependentUpon>frmInventarioDiarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMaestroDiarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicioSesion.resx">
       <DependentUpon>frmInicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventarioDiarios.resx">
+      <DependentUpon>frmInventarioDiarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaestroDiarios.resx">
       <DependentUpon>frmMaestroDiarios.cs</DependentUpon>
