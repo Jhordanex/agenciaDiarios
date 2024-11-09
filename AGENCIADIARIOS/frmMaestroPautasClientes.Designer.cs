@@ -67,8 +67,7 @@
             this.groupBox1.Size = new System.Drawing.Size(760, 353);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pautas";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBox1.Text = "Pautas del Cliente";
             // 
             // txtCantidadPromedio
             // 
@@ -86,6 +85,7 @@
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEliminar
             // 
@@ -96,6 +96,7 @@
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -131,6 +132,7 @@
             // 
             // cmbDiarios
             // 
+            this.cmbDiarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDiarios.FormattingEnabled = true;
             this.cmbDiarios.Location = new System.Drawing.Point(201, 151);
             this.cmbDiarios.Name = "cmbDiarios";
@@ -139,12 +141,12 @@
             // 
             // cmbClientes
             // 
+            this.cmbClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbClientes.FormattingEnabled = true;
             this.cmbClientes.Location = new System.Drawing.Point(201, 81);
             this.cmbClientes.Name = "cmbClientes";
             this.cmbClientes.Size = new System.Drawing.Size(295, 24);
             this.cmbClientes.TabIndex = 3;
-            this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -183,7 +185,6 @@
             this.dataPautasClientes.RowTemplate.Height = 24;
             this.dataPautasClientes.Size = new System.Drawing.Size(1157, 300);
             this.dataPautasClientes.TabIndex = 6;
-            this.dataPautasClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPautasClientes_CellContentClick);
             // 
             // pictureBox1
             // 

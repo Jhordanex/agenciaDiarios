@@ -23,8 +23,8 @@ public class PautasClientesNegocio
         pautasClientes.EditarPautasCliente(idPauta, iCliente, iDiario, txtCantidadPromedio, iUsuarioModificacion);
     }
 
-    //public void EliminarCliente(int idCliente)
-    //{
-    //    datos.EliminarCliente(idCliente);
-    //}
+    public void EliminarPautasCliente(int idPauta)
+    {
+        pautasClientes.EliminarPautasCliente(idPauta);
+    }
 }
