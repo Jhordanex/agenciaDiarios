@@ -121,5 +121,10 @@ namespace AGENCIADIARIOS
             this.Close();
 
         }
+
+        private void inventarioDeDiariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

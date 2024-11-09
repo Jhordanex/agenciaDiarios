@@ -89,6 +89,12 @@
     <Compile Include="frmMaestroDiarios.Designer.cs">
       <DependentUpon>frmMaestroDiarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMaestroPautasClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaestroPautasClientes.Designer.cs">
+      <DependentUpon>frmMaestroPautasClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenuInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,8 +119,12 @@
     <EmbeddedResource Include="frmMaestroDiarios.resx">
       <DependentUpon>frmMaestroDiarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMaestroPautasClientes.resx">
+      <DependentUpon>frmMaestroPautasClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuInicio.resx">
       <DependentUpon>frmMenuInicio.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoVenta.resx">
       <DependentUpon>frmProcesoVenta.cs</DependentUpon>
