@@ -108,6 +108,18 @@ namespace AGENCIADIARIOS
             ventaForm.Show();
             ventaForm.TopMost = true;
             ventaForm.Activate();
+            this.Close();
+
+        }
+
+        private void maestroDePautasDelClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMaestroPautasClientes pautasForm = new frmMaestroPautasClientes();
+            pautasForm.Show();
+            pautasForm.TopMost = true;
+            pautasForm.Activate();
+            this.Close();
+
         }
     }
 }
