@@ -10,16 +10,28 @@ namespace AGENCIADIARIOS
         {
             InitializeComponent();
 
-            //FormBorderStyle = FormBorderStyle.FixedDialog; 
-            //MaximizeBox = false; 
-            //MinimizeBox = true;  
 
-            //StartPosition = FormStartPosition.CenterScreen; 
-            //WindowState = FormWindowState.Normal;
-            //this.Size = new Size(800, 600); // Cambia el tamaño según tus necesidades
 
+
+        //FormBorderStyle = FormBorderStyle.FixedDialog; 
+        //MaximizeBox = false; 
+        //MinimizeBox = true;  
+
+        //StartPosition = FormStartPosition.CenterScreen; 
+        //WindowState = FormWindowState.Normal;
+        //this.Size = new Size(800, 600); // Cambia el tamaño según tus necesidades
+
+    }
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
         }
-
         private void btnClientes_Click(object sender, EventArgs e)
         {
           //  frmMaestroClientes frmMaestroClientes = new frmMaestroClientes();
