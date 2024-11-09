@@ -71,8 +71,8 @@ namespace AGENCIADIARIOS
                 dataPautasClientes.Columns["vchNombreCliente"].HeaderText = "Nombre del Cliente";
                 dataPautasClientes.Columns["vchNombreDiario"].HeaderText = "Nombre del Diario";
                 dataPautasClientes.Columns["vchCantidadpromedio"].HeaderText = "Cantidad Promedio";
-                dataPautasClientes.Columns["fechaRegistro"].HeaderText = "Fecha del Registro";
-                dataPautasClientes.Columns["fechaModificacion"].HeaderText = "Fecha de la Modificación";
+                dataPautasClientes.Columns["dtFechaRegistro"].HeaderText = "Fecha del Registro";
+                dataPautasClientes.Columns["dtFechaModificacion"].HeaderText = "Fecha de la Modificación";
                 dataPautasClientes.Columns["iUsuarioRegistro"].HeaderText = "Usuario Registro";
                 dataPautasClientes.Columns["iUsuarioModificacion"].HeaderText = "Usuario Modificación";
 

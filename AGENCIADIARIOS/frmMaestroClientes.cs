@@ -47,6 +47,7 @@ namespace AGENCIADIARIOS
                 }
                 //dataClientes.Columns["Usuario ID"].HeaderText = "Usuario Registro";
                 dataClientes.Columns["iUsuarioRegistro"].HeaderText = "Usuario Registro";
+                dataClientes.Columns["iUsuarioModificacion"].HeaderText = "Usuario Modificacion";
                 dataClientes.Columns["idCliente"].HeaderText = "ID Cliente";
                 dataClientes.Columns["vchNombreCliente"].HeaderText = "Nombre";
                 dataClientes.Columns["vchApellidoCliente"].HeaderText = "Apellido";
@@ -54,6 +55,7 @@ namespace AGENCIADIARIOS
                 dataClientes.Columns["vchTelefono"].HeaderText = "Teléfono";
                 dataClientes.Columns["vchEmailCliente"].HeaderText = "Email";
                 dataClientes.Columns["dFechaModificacion"].HeaderText = "Fecha Modificación";
+                dataClientes.Columns["dtFechaRegistro"].HeaderText = "Fecha del Registro";
                 dataClientes.Columns["vchSindicato"].HeaderText = "Sindicato";
 
 
