@@ -16,9 +16,7 @@ namespace AGENCIADIARIOS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new InicioSesion());
-            //Application.Run(new frmMaestroDiarios());
-            Application.Run(new frmInventarioDiarios());
+            Application.Run(new InicioSesion());
         }
     }
 }
