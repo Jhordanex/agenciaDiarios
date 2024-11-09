@@ -183,6 +183,7 @@
             this.dataPautasClientes.RowTemplate.Height = 24;
             this.dataPautasClientes.Size = new System.Drawing.Size(1157, 300);
             this.dataPautasClientes.TabIndex = 6;
+            this.dataPautasClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPautasClientes_CellContentClick);
             // 
             // pictureBox1
             // 

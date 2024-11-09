@@ -92,6 +92,7 @@ namespace AGENCIADIARIOS
 
         private void frmMaestroPautasClientes_Load(object sender, EventArgs e)
         {
+            CargarPautasClientes();
             CargarClientesCombo();
             CargarDiariosCombo();
             lblNombreUser.Text = VariablesGL.Usuario;
@@ -229,6 +230,10 @@ namespace AGENCIADIARIOS
             }
         }
 
+        private void dataPautasClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

@@ -14,7 +14,7 @@ namespace capaDatos
             try
             {
                 AbrirConexion();
-                string query = "SP_OBTENER_DIARIOS";
+                string query = "SP_OBTENER_INV_DIARIOS";
                 using (SqlCommand comando = new SqlCommand(query, conexion))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
