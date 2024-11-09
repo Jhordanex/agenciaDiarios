@@ -26,6 +26,10 @@ namespace AGENCIADIARIOS
             dataPautasClientes.ReadOnly = true;
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
+
+            this.MaximizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
         }
         PautasClientesNegocio pautasClientesNegocio = new PautasClientesNegocio();
         private void LimpiarCampos()
@@ -67,8 +71,8 @@ namespace AGENCIADIARIOS
                 dataPautasClientes.Columns["vchNombreCliente"].HeaderText = "Nombre del Cliente";
                 dataPautasClientes.Columns["vchNombreDiario"].HeaderText = "Nombre del Diario";
                 dataPautasClientes.Columns["vchCantidadpromedio"].HeaderText = "Cantidad Promedio";
-                dataPautasClientes.Columns["fechaRegistro"].HeaderText = "Fecha del Registro";
-                dataPautasClientes.Columns["fechaModificacion"].HeaderText = "Fecha de la Modificación";
+                dataPautasClientes.Columns["dtFechaRegistro"].HeaderText = "Fecha del Registro";
+                dataPautasClientes.Columns["dtFechaModificacion"].HeaderText = "Fecha de la Modificación";
                 dataPautasClientes.Columns["iUsuarioRegistro"].HeaderText = "Usuario Registro";
                 dataPautasClientes.Columns["iUsuarioModificacion"].HeaderText = "Usuario Modificación";
 
@@ -97,6 +101,8 @@ namespace AGENCIADIARIOS
             CargarDiariosCombo();
             lblNombreUser.Text = VariablesGL.Usuario;
 
+            dataPautasClientes.ClearSelection();
+
         }
 
         private void CargarClientesCombo()
@@ -112,6 +118,8 @@ namespace AGENCIADIARIOS
                 cmbClientes.DataSource = bindingSource;
                 cmbClientes.DisplayMember = "vchNombreCliente"; 
                 cmbClientes.ValueMember = "idCliente"; 
+
+                cmbClientes.SelectedIndex = -1;
 
             }
             else
@@ -132,6 +140,7 @@ namespace AGENCIADIARIOS
                 cmbDiarios.DataSource = bindingSource;
                 cmbDiarios.DisplayMember = "NOMBRE DIARIO";
                 cmbDiarios.ValueMember = "idDiario";
+                cmbDiarios.SelectedIndex = -1;  
 
             }
             else
@@ -156,18 +165,6 @@ namespace AGENCIADIARIOS
                 btnAgregar.Enabled = false;
             }
         }
-
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -229,10 +226,54 @@ namespace AGENCIADIARIOS
                 MessageBox.Show("Error al editar la pauta del cliente: " + ex.Message);
             }
         }
-
-        private void dataPautasClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
+            bool camposVacios = string.IsNullOrEmpty(cmbDiarios.Text) &&
+                                string.IsNullOrEmpty(cmbClientes.Text) &&
+                                string.IsNullOrEmpty(txtCantidadPromedio.Text);
 
+            if (camposVacios && selectedIdPauta == 0)
+            {
+                frmMenuInicio menuForm = new frmMenuInicio();
+                menuForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                LimpiarCampos();
+
+                btnAgregar.Enabled = true;
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (selectedIdPauta <= 0)
+                {
+                    MessageBox.Show("Por favor, seleccione una pauta para eliminar.");
+                    return;
+                }
+
+                var confirmResult = MessageBox.Show("¿Está seguro de que desea eliminar está pauta?",
+                                                    "Confirmar eliminación",
+                                                    MessageBoxButtons.YesNo,
+                                                    MessageBoxIcon.Question);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    pautasClientesNegocio.EliminarPautasCliente(selectedIdPauta);
+                    MessageBox.Show("Cliente eliminado exitosamente.");
+                    CargarPautasClientes();
+                    LimpiarCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el cliente: " + ex.Message);
+            }
         }
     }
 

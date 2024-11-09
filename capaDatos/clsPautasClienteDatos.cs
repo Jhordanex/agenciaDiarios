@@ -66,7 +66,7 @@ namespace capaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idPauta", idPauta);
                     cmd.Parameters.AddWithValue("@iCliente", iCliente);
-                    cmd.Parameters.AddWithValue("@iCliente", iDiario);
+                    cmd.Parameters.AddWithValue("@iDiario", iDiario);
                     cmd.Parameters.AddWithValue("@vchCantidadPromedio", vchCantidadPromedio);
                     cmd.Parameters.AddWithValue("@iUsuarioModificacion", iUsuarioModificacion);
                     cmd.ExecuteNonQuery();
@@ -82,20 +82,20 @@ namespace capaDatos
             }
         }
 
-        public void EliminarCliente(int idCliente)
+        public void EliminarPautasCliente(int idPauta)
         {
             try
             {
-                using (SqlCommand cmd = new SqlCommand("SP_ELIMINAR_CLIENTE", con.AbrirConexion()))
+                using (SqlCommand cmd = new SqlCommand("SP_ELIMINAR_PAUTAS_CLIENTE", con.AbrirConexion()))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+                    cmd.Parameters.AddWithValue("@idPauta", idPauta);
                     cmd.ExecuteNonQuery();
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al eliminar el cliente: " + ex.Message);
+                throw new Exception("Error al eliminar la pauta: " + ex.Message);
             }
             finally
             {

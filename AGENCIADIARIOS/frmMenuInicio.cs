@@ -71,6 +71,8 @@ namespace AGENCIADIARIOS
             DiariosForm.Show();
             DiariosForm.TopMost = true;
             DiariosForm.Activate();
+            this.Close();
+
 
         }
 
@@ -83,7 +85,9 @@ namespace AGENCIADIARIOS
                 frmMaestroClientes.TopMost = true;
                 frmMaestroClientes.Activate();
                 clientesNegocio.ListarClientes();
-            
+                this.Close();
+
+
         }
 
         private void toolStripDropDownButton4_Click(object sender, EventArgs e)
