@@ -54,13 +54,13 @@
             // maestroDeDiariosToolStripMenuItem
             // 
             this.maestroDeDiariosToolStripMenuItem.Name = "maestroDeDiariosToolStripMenuItem";
-            this.maestroDeDiariosToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
+            this.maestroDeDiariosToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.maestroDeDiariosToolStripMenuItem.Text = "Maestro de Diarios";
             // 
             // maestroDeToolStripMenuItem
             // 
             this.maestroDeToolStripMenuItem.Name = "maestroDeToolStripMenuItem";
-            this.maestroDeToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
+            this.maestroDeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.maestroDeToolStripMenuItem.Text = "Maestro de Clientes";
             this.maestroDeToolStripMenuItem.Click += new System.EventHandler(this.maestroDeToolStripMenuItem_Click);
             // 
@@ -87,7 +87,7 @@
             this.toolStripDropDownButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(997, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(748, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -101,27 +101,27 @@
             this.tsMaestros.Image = ((System.Drawing.Image)(resources.GetObject("tsMaestros.Image")));
             this.tsMaestros.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsMaestros.Name = "tsMaestros";
-            this.tsMaestros.Size = new System.Drawing.Size(160, 24);
+            this.tsMaestros.Size = new System.Drawing.Size(129, 22);
             this.tsMaestros.Text = "Modulo de Maestros";
             // 
             // maestroDeDiariosToolStripMenuItem1
             // 
             this.maestroDeDiariosToolStripMenuItem1.Name = "maestroDeDiariosToolStripMenuItem1";
-            this.maestroDeDiariosToolStripMenuItem1.Size = new System.Drawing.Size(288, 26);
+            this.maestroDeDiariosToolStripMenuItem1.Size = new System.Drawing.Size(230, 22);
             this.maestroDeDiariosToolStripMenuItem1.Text = "Maestro de Diarios";
             this.maestroDeDiariosToolStripMenuItem1.Click += new System.EventHandler(this.maestroDeDiariosToolStripMenuItem1_Click);
             // 
             // maestroDeClientesToolStripMenuItem
             // 
             this.maestroDeClientesToolStripMenuItem.Name = "maestroDeClientesToolStripMenuItem";
-            this.maestroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(288, 26);
+            this.maestroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.maestroDeClientesToolStripMenuItem.Text = "Maestro de Clientes";
             this.maestroDeClientesToolStripMenuItem.Click += new System.EventHandler(this.maestroDeClientesToolStripMenuItem_Click);
             // 
             // maestroDePautasDelClienteToolStripMenuItem
             // 
             this.maestroDePautasDelClienteToolStripMenuItem.Name = "maestroDePautasDelClienteToolStripMenuItem";
-            this.maestroDePautasDelClienteToolStripMenuItem.Size = new System.Drawing.Size(288, 26);
+            this.maestroDePautasDelClienteToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.maestroDePautasDelClienteToolStripMenuItem.Text = "Maestro de Pautas del Cliente";
             this.maestroDePautasDelClienteToolStripMenuItem.Click += new System.EventHandler(this.maestroDePautasDelClienteToolStripMenuItem_Click);
             // 
@@ -135,25 +135,26 @@
             this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(143, 24);
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(115, 22);
             this.toolStripDropDownButton2.Text = "Modulo de Ventas";
             // 
             // inventarioDeDiariosToolStripMenuItem
             // 
             this.inventarioDeDiariosToolStripMenuItem.Name = "inventarioDeDiariosToolStripMenuItem";
-            this.inventarioDeDiariosToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.inventarioDeDiariosToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
             this.inventarioDeDiariosToolStripMenuItem.Text = "Inventario de Diarios";
+            this.inventarioDeDiariosToolStripMenuItem.Click += new System.EventHandler(this.inventarioDeDiariosToolStripMenuItem_Click);
             // 
             // rToolStripMenuItem
             // 
             this.rToolStripMenuItem.Name = "rToolStripMenuItem";
-            this.rToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.rToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
             this.rToolStripMenuItem.Text = "Registro Integrado de pautas para las ventas";
             // 
             // procesoDeVentasToolStripMenuItem
             // 
             this.procesoDeVentasToolStripMenuItem.Name = "procesoDeVentasToolStripMenuItem";
-            this.procesoDeVentasToolStripMenuItem.Size = new System.Drawing.Size(387, 26);
+            this.procesoDeVentasToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
             this.procesoDeVentasToolStripMenuItem.Text = "Proceso de Ventas";
             this.procesoDeVentasToolStripMenuItem.Click += new System.EventHandler(this.procesoDeVentasToolStripMenuItem_Click);
             // 
@@ -166,19 +167,19 @@
             this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(170, 24);
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(135, 22);
             this.toolStripDropDownButton3.Text = "Modulo de Reporteria";
             // 
             // reporteHistoricoDePagoDeClientesToolStripMenuItem
             // 
             this.reporteHistoricoDePagoDeClientesToolStripMenuItem.Name = "reporteHistoricoDePagoDeClientesToolStripMenuItem";
-            this.reporteHistoricoDePagoDeClientesToolStripMenuItem.Size = new System.Drawing.Size(341, 26);
+            this.reporteHistoricoDePagoDeClientesToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.reporteHistoricoDePagoDeClientesToolStripMenuItem.Text = "Reporte historico de pago de clientes";
             // 
             // reporteDeEstadisticaDeVentasToolStripMenuItem
             // 
             this.reporteDeEstadisticaDeVentasToolStripMenuItem.Name = "reporteDeEstadisticaDeVentasToolStripMenuItem";
-            this.reporteDeEstadisticaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(341, 26);
+            this.reporteDeEstadisticaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.reporteDeEstadisticaDeVentasToolStripMenuItem.Text = "Reporte de Estadistica de Ventas";
             // 
             // toolStripDropDownButton4
@@ -190,42 +191,43 @@
             this.toolStripDropDownButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton4.Image")));
             this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
-            this.toolStripDropDownButton4.Size = new System.Drawing.Size(50, 24);
+            this.toolStripDropDownButton4.Size = new System.Drawing.Size(42, 22);
             this.toolStripDropDownButton4.Text = "Mas";
             // 
             // versiónToolStripMenuItem
             // 
             this.versiónToolStripMenuItem.Name = "versiónToolStripMenuItem";
-            this.versiónToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.versiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.versiónToolStripMenuItem.Text = "Versión";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(395, 54);
+            this.label1.Location = new System.Drawing.Point(296, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 30);
+            this.label1.Size = new System.Drawing.Size(125, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "MENU INICIO";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmMenuInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 562);
+            this.ClientSize = new System.Drawing.Size(748, 457);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmMenuInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

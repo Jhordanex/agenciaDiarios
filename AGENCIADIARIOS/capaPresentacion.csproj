@@ -124,6 +124,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuInicio.resx">
       <DependentUpon>frmMenuInicio.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoVenta.resx">
       <DependentUpon>frmProcesoVenta.cs</DependentUpon>

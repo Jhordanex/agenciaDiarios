@@ -10,23 +10,35 @@ namespace AGENCIADIARIOS
         {
             InitializeComponent();
 
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximizeBox = false;
-            MinimizeBox = true;
 
-            StartPosition = FormStartPosition.CenterScreen;
-            WindowState = FormWindowState.Normal;
-            this.Size = new Size(800, 600); // Cambia el tamaño según tus necesidades
 
+
+        //FormBorderStyle = FormBorderStyle.FixedDialog; 
+        //MaximizeBox = false; 
+        //MinimizeBox = true;  
+
+        //StartPosition = FormStartPosition.CenterScreen; 
+        //WindowState = FormWindowState.Normal;
+        //this.Size = new Size(800, 600); // Cambia el tamaño según tus necesidades
+
+    }
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
         }
-
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            frmMaestroClientes frmMaestroClientes = new frmMaestroClientes();
-            ClientesNegocio clientesNegocio = new ClientesNegocio();
-            frmMaestroClientes.Show();
-            clientesNegocio.ListarClientes();
-            this.Close();
+          //  frmMaestroClientes frmMaestroClientes = new frmMaestroClientes();
+           // ClientesNegocio clientesNegocio = new ClientesNegocio();
+            //frmMaestroClientes.Show();
+            //clientesNegocio.ListarClientes();
+            //this.Hide();
         }
 
         private void maestroDeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,10 +58,11 @@ namespace AGENCIADIARIOS
 
         private void MenuForm_Load(object sender, EventArgs e)
         {
-            this.MaximizeBox = false;
-            this.FormBorderStyle = FormBorderStyle.FixedDialog; // Refuerza la restricción
-            this.SizeGripStyle = SizeGripStyle.Hide;
-            this.WindowState = FormWindowState.Normal; // Asegurar que no se abra maximizada
+            // Evitar maximizar en cualquier momento del ciclo de vida del formulario
+            //this.MaximizeBox = false;
+            //this.FormBorderStyle = FormBorderStyle.FixedDialog; // Refuerza la restricción
+            //this.SizeGripStyle = SizeGripStyle.Hide;
+            //this.WindowState = FormWindowState.Normal; // Asegurar que no se abra maximizada
         }
 
         private void maestroDeDiariosToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -58,8 +71,6 @@ namespace AGENCIADIARIOS
             DiariosForm.Show();
             DiariosForm.TopMost = true;
             DiariosForm.Activate();
-            this.Close();
-
 
         }
 
@@ -72,9 +83,7 @@ namespace AGENCIADIARIOS
                 frmMaestroClientes.TopMost = true;
                 frmMaestroClientes.Activate();
                 clientesNegocio.ListarClientes();
-                this.Close();
-
-
+            
         }
 
         private void toolStripDropDownButton4_Click(object sender, EventArgs e)
@@ -110,6 +119,11 @@ namespace AGENCIADIARIOS
             pautasForm.TopMost = true;
             pautasForm.Activate();
             this.Close();
+
+        }
+
+        private void inventarioDeDiariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }
