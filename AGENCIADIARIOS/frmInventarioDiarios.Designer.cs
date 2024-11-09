@@ -65,7 +65,7 @@
             this.gbInventario.Size = new System.Drawing.Size(383, 350);
             this.gbInventario.TabIndex = 8;
             this.gbInventario.TabStop = false;
-            this.gbInventario.Text = "MAESTRO DE INVENTARIO DE DIARIOS";
+            this.gbInventario.Text = "MAESTRO INVENTARIO DE DIARIOS";
             // 
             // txtPrecioDia
             // 
@@ -163,19 +163,22 @@
             // lblNombreUser
             // 
             this.lblNombreUser.AutoSize = true;
-            this.lblNombreUser.BackColor = System.Drawing.Color.White;
-            this.lblNombreUser.Location = new System.Drawing.Point(900, 460);
+            this.lblNombreUser.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblNombreUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUser.ForeColor = System.Drawing.Color.White;
+            this.lblNombreUser.Location = new System.Drawing.Point(889, 406);
             this.lblNombreUser.Name = "lblNombreUser";
-            this.lblNombreUser.Size = new System.Drawing.Size(35, 13);
+            this.lblNombreUser.Size = new System.Drawing.Size(41, 13);
             this.lblNombreUser.TabIndex = 11;
             this.lblNombreUser.Text = "label3";
+            this.lblNombreUser.Click += new System.EventHandler(this.lblNombreUser_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox3.Location = new System.Drawing.Point(-1, 455);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 402);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(966, 22);
+            this.pictureBox3.Size = new System.Drawing.Size(996, 22);
             this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
             // 
@@ -193,13 +196,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 482);
+            this.ClientSize = new System.Drawing.Size(990, 421);
             this.Controls.Add(this.gbInventario);
             this.Controls.Add(this.lblNombreUser);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.dtgInvDiarios);
             this.Name = "frmInventarioDiarios";
-            this.Text = "frmInventarioDiarios";
+            this.Text = "MAESTRO INVENTRARIO DE DIARIOS";
             this.Load += new System.EventHandler(this.frmInventarioDiarios_Load);
             this.gbInventario.ResumeLayout(false);
             this.gbInventario.PerformLayout();

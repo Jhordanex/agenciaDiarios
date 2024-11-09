@@ -199,9 +199,9 @@ namespace AGENCIADIARIOS
                 txtPrecioDia.Enabled = false;
                 txtStock.Text = "";
                 txtPrecioDia.Text = "";
-
                 btnEditar.Text = "✏ Editar";
             }
+            dtgInvDiarios.ClearSelection();
         }
 
         private void dtgInvDiarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -232,6 +232,11 @@ namespace AGENCIADIARIOS
                     txtPrecioDia.Text = filaSeleccionada.Cells["PRECIO DIA"].Value.ToString();
                 }
             }
+        }
+
+        private void lblNombreUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
