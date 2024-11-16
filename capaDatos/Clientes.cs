@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net;
+using System.Windows.Forms;
 
 namespace capaDatos
 {
@@ -13,55 +10,90 @@ namespace capaDatos
     {
         clsConexion con = new clsConexion();
 
-        public void AgregarCliente(string txtNombre, string txtApellido, int txtDni, int txtTelefono, string txtEmail)
+        public void AgregarCliente(int iUsuario,string txtNombre, string txtApellido, int txtDni, int txtTelefono, string txtEmail,string txtSindicato)
         {
-            using (SqlCommand cmd = new SqlCommand("SP_AGREGAR_CLIENTES", con.AbrirConexion()))
+            try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@pevchNombreCliente", txtNombre);
-                cmd.Parameters.AddWithValue("@pevchApellidoCliente", txtApellido);
-                cmd.Parameters.AddWithValue("@peDNI", txtDni);
-                cmd.Parameters.AddWithValue("@petelefono", txtTelefono);
-                cmd.Parameters.AddWithValue("@pevchEmailCliente", txtEmail);
-                cmd.ExecuteNonQuery();
+                using (SqlCommand cmd = new SqlCommand("SP_AGREGAR_CLIENTES", con.AbrirConexion()))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@peiUsuario", iUsuario);
+                    cmd.Parameters.AddWithValue("@pevchNombreCliente", txtNombre);
+                    cmd.Parameters.AddWithValue("@pevchApellidoCliente", txtApellido);
+                    cmd.Parameters.AddWithValue("@pevchDNI", txtDni);
+                    cmd.Parameters.AddWithValue("@pevchTelefono", txtTelefono);
+                    cmd.Parameters.AddWithValue("@pevchEmailCliente", txtEmail);
+                    cmd.Parameters.AddWithValue("@pevchSindicato", txtSindicato);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al agregar el cliente: " + ex.Message);
+            }
+            finally
+            {
                 con.CerrarConexion();
             }
         }
+
         public DataTable ListarClientes()
         {
             DataTable tabla = new DataTable();
-            using (SqlCommand cmd = new SqlCommand("SP_LISTAR_CLIENTES", con.AbrirConexion()))
+            try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataReader reader = cmd.ExecuteReader();
-                tabla.Load(reader);
+                using (SqlCommand cmd = new SqlCommand("SP_LISTAR_CLIENTES", con.AbrirConexion()))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    tabla.Load(reader);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al listar clientes: " + ex.Message);
+            }
+            finally
+            {
                 con.CerrarConexion();
             }
             return tabla;
         }
 
-        public void EditarCliente( int idCliente,string txtNombre, string txtApellido, int txtDni, int txtTelefono, string txtEmail)
+        public void EditarCliente(
+            int idCliente, string txtNombre, string txtApellido, int txtDni, int txtTelefono, 
+            string txtEmail, string cmbSindicato, int iUsuarioModificacion)
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("SP_EDITAR_CLIENTES", con.AbrirConexion());
+                using (SqlCommand cmd = new SqlCommand("SP_EDITAR_CLIENTES", con.AbrirConexion()))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+                    cmd.Parameters.AddWithValue("@vchNombreCliente", txtNombre);
+                    cmd.Parameters.AddWithValue("@vchApellidoCliente", txtApellido);
+                    cmd.Parameters.AddWithValue("@vchDNI", txtDni);
+                    cmd.Parameters.AddWithValue("@vchTelefono", txtTelefono);
+                    cmd.Parameters.AddWithValue("@vchEmailCliente", txtEmail);
+                    cmd.Parameters.AddWithValue("@vchSindicato", cmbSindicato);
+                    cmd.Parameters.AddWithValue("@iUsuarioModificacion", iUsuarioModificacion);
 
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idCliente", idCliente);
-                cmd.Parameters.AddWithValue("@vchNombreCliente", txtNombre);
-                cmd.Parameters.AddWithValue("@vchApellidoCliente", txtApellido);
-                cmd.Parameters.AddWithValue("@DNI", txtDni);
-                cmd.Parameters.AddWithValue("@telefono", txtTelefono);
-                cmd.Parameters.AddWithValue("@vchEmailCliente", txtEmail);
-                cmd.ExecuteNonQuery();
+
+
+
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al editar el cliente: " + ex.Message);
+            }
+            finally
+            {
                 con.CerrarConexion();
             }
-            catch (Exception ex) {
-
-                throw new Exception("Error al editar el cliente: " + ex.Message);
-
-            }
-
         }
 
         public void EliminarCliente(int idCliente)
@@ -74,14 +106,15 @@ namespace capaDatos
                     cmd.Parameters.AddWithValue("@idCliente", idCliente);
                     cmd.ExecuteNonQuery();
                 }
-                con.CerrarConexion();
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al eliminar el cliente: " + ex.Message);
             }
+            finally
+            {
+                con.CerrarConexion();
+            }
         }
-
-
     }
 }

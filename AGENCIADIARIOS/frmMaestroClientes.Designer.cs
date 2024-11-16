@@ -1,6 +1,6 @@
 ﻿namespace AGENCIADIARIOS
 {
-    partial class ClientesForm
+    partial class frmMaestroClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbSindicato = new System.Windows.Forms.ComboBox();
+            this.lblSindicato = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -46,24 +47,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataClientes = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblNombreUser = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(446, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Maestro de Clientes";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbSindicato);
+            this.groupBox1.Controls.Add(this.lblSindicato);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEliminar);
@@ -79,14 +73,39 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(16, 88);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(23, 31);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(438, 309);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(370, 314);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Maestro de Clientes";
+            this.groupBox1.Text = "MAESTRO DE CLIENTES";
+            // 
+            // cmbSindicato
+            // 
+            this.cmbSindicato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSindicato.FormattingEnabled = true;
+            this.cmbSindicato.Items.AddRange(new object[] {
+            "Prueba01",
+            "Prueba02",
+            "Prueba03"});
+            this.cmbSindicato.Location = new System.Drawing.Point(121, 210);
+            this.cmbSindicato.Name = "cmbSindicato";
+            this.cmbSindicato.Size = new System.Drawing.Size(184, 21);
+            this.cmbSindicato.TabIndex = 19;
+            this.cmbSindicato.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // lblSindicato
+            // 
+            this.lblSindicato.AutoSize = true;
+            this.lblSindicato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSindicato.Location = new System.Drawing.Point(9, 214);
+            this.lblSindicato.Name = "lblSindicato";
+            this.lblSindicato.Size = new System.Drawing.Size(51, 13);
+            this.lblSindicato.TabIndex = 18;
+            this.lblSindicato.Text = "Sindicato";
             // 
             // label7
             // 
@@ -99,8 +118,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(259, 246);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(248, 262);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(57, 24);
             this.btnCancelar.TabIndex = 16;
@@ -110,8 +130,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(201, 245);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(190, 261);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(53, 24);
             this.btnEliminar.TabIndex = 15;
@@ -121,8 +142,9 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(143, 245);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(132, 261);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(53, 24);
             this.btnEditar.TabIndex = 14;
@@ -132,31 +154,32 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnAgregar.ImageKey = "(ninguno)";
-            this.btnAgregar.Location = new System.Drawing.Point(86, 245);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Location = new System.Drawing.Point(75, 261);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(53, 24);
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(121, 177);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(270, 19);
+            this.txtEmail.Size = new System.Drawing.Size(184, 19);
             this.txtEmail.TabIndex = 9;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(121, 139);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(134, 19);
@@ -165,7 +188,7 @@
             // txtDni
             // 
             this.txtDni.Location = new System.Drawing.Point(121, 110);
-            this.txtDni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(2);
             this.txtDni.Multiline = true;
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(134, 19);
@@ -174,7 +197,7 @@
             // txtApellidoCliente
             // 
             this.txtApellidoCliente.Location = new System.Drawing.Point(121, 76);
-            this.txtApellidoCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellidoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellidoCliente.Multiline = true;
             this.txtApellidoCliente.Name = "txtApellidoCliente";
             this.txtApellidoCliente.Size = new System.Drawing.Size(134, 19);
@@ -183,7 +206,7 @@
             // txtNombreCliente
             // 
             this.txtNombreCliente.Location = new System.Drawing.Point(121, 44);
-            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreCliente.Multiline = true;
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(134, 19);
@@ -192,6 +215,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(8, 177);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
@@ -202,6 +226,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(4, 144);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
@@ -212,6 +237,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(8, 110);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -222,6 +248,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(4, 81);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -232,6 +259,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(4, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -241,44 +269,65 @@
             // 
             // dataClientes
             // 
-            this.dataClientes.AllowUserToAddRows = false;
+            this.dataClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataClientes.ColumnHeadersVisible = false;
-            this.dataClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataClientes.EnableHeadersVisualStyles = false;
-            this.dataClientes.Location = new System.Drawing.Point(473, 89);
-            this.dataClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataClientes.Location = new System.Drawing.Point(406, 38);
             this.dataClientes.Name = "dataClientes";
             this.dataClientes.RowHeadersWidth = 51;
             this.dataClientes.RowTemplate.Height = 24;
-            this.dataClientes.Size = new System.Drawing.Size(608, 307);
+            this.dataClientes.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataClientes.Size = new System.Drawing.Size(716, 307);
             this.dataClientes.TabIndex = 2;
-            this.dataClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataClientes_CellClick);
+            this.dataClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // ClientesForm
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 381);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1137, 22);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // lblNombreUser
+            // 
+            this.lblNombreUser.AutoSize = true;
+            this.lblNombreUser.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblNombreUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUser.ForeColor = System.Drawing.Color.White;
+            this.lblNombreUser.Location = new System.Drawing.Point(1039, 386);
+            this.lblNombreUser.Name = "lblNombreUser";
+            this.lblNombreUser.Size = new System.Drawing.Size(41, 13);
+            this.lblNombreUser.TabIndex = 4;
+            this.lblNombreUser.Text = "label1";
+            this.lblNombreUser.Click += new System.EventHandler(this.lblNombreUser_Click);
+            // 
+            // frmMaestroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 511);
+            this.ClientSize = new System.Drawing.Size(1136, 403);
+            this.Controls.Add(this.lblNombreUser);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataClientes);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "ClientesForm";
-            this.Text = "ClientesForm";
-            this.Load += new System.EventHandler(this.ClientesForm_Load);
+            this.MaximizeBox = false;
+            this.Name = "frmMaestroClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "MAESTRO DE CLIENTES";
+            this.Load += new System.EventHandler(this.frmMaestroClientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -294,7 +343,11 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView dataClientes;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dataClientes;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblNombreUser;
+        private System.Windows.Forms.ComboBox cmbSindicato;
+        private System.Windows.Forms.Label lblSindicato;
     }
 }

@@ -8,14 +8,8 @@ namespace capaNegocio
 {
     public static class VariablesGL
     {
-        // Simulación de credenciales
-        public static string UsuarioSimulado= "admin";
-        public static int iUsuarioId = 1;
-        public static string ContraseñaSimulada = "123456";
-
         // Información del usuario después del login
         public static string Usuario { get; set; }
-        public static string Contraseña { get; set; }
-        public static bool SesionActiva { get; set; } = false;
+        public static int idUsuario { get; set; }
     }
 }

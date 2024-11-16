@@ -51,8 +51,14 @@
     <StartupObject>AGENCIADIARIOS.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,14 +68,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClientesForm.Designer.cs">
-      <DependentUpon>ClientesForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,35 +83,60 @@
     <Compile Include="frmInventarioDiarios.Designer.cs">
       <DependentUpon>frmInventarioDiarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMaestroClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaestroClientes.Designer.cs">
+      <DependentUpon>frmMaestroClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMaestroDiarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMaestroDiarios.Designer.cs">
       <DependentUpon>frmMaestroDiarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm.cs">
+    <Compile Include="frmMaestroPautasClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.Designer.cs">
-      <DependentUpon>MenuForm.cs</DependentUpon>
+    <Compile Include="frmMaestroPautasClientes.Designer.cs">
+      <DependentUpon>frmMaestroPautasClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuInicio.Designer.cs">
+      <DependentUpon>frmMenuInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoVenta.Designer.cs">
+      <DependentUpon>frmProcesoVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ClientesForm.resx">
-      <DependentUpon>ClientesForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmInicioSesion.resx">
       <DependentUpon>frmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInventarioDiarios.resx">
       <DependentUpon>frmInventarioDiarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMaestroClientes.resx">
+      <DependentUpon>frmMaestroClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMaestroDiarios.resx">
       <DependentUpon>frmMaestroDiarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
-      <DependentUpon>MenuForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmMaestroPautasClientes.resx">
+      <DependentUpon>frmMaestroPautasClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuInicio.resx">
+      <DependentUpon>frmMenuInicio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoVenta.resx">
+      <DependentUpon>frmProcesoVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\AGENCIADIARIOS.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -127,6 +153,7 @@
     <None Include="obj\Debug\capaPresentacion.csproj.GenerateResource.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Release\capaPresentacion.csproj.AssemblyReference.cache" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

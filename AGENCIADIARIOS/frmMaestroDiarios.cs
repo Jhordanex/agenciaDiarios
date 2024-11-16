@@ -11,11 +11,11 @@ using System.Windows.Forms;
 using capaNegocio;
 using System.Drawing.Drawing2D;
 
-namespace AGENCIADIARIOS    
+namespace AGENCIADIARIOS
 {
     public partial class frmMaestroDiarios : Form
     {
-        clsDiarioNegocio usuarioNegocio = new clsDiarioNegocio();
+        Class1 usuarioNegocio = new Class1();
         string snombre;
 
         public frmMaestroDiarios()
@@ -90,7 +90,7 @@ namespace AGENCIADIARIOS
 
             if (!string.IsNullOrEmpty(sNombreDiario))
             {
-                usuarioNegocio.AgregarDiario(sNombreDiario, VariablesGL.iUsuarioId);
+                usuarioNegocio.AgregarDiario(sNombreDiario, VariablesGL.idUsuario);
                 txtNombreDiario.Text = "";
                 txtNombreDiario.Focus();
             }

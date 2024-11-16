@@ -1,6 +1,6 @@
 ﻿namespace AGENCIADIARIOS
 {
-    partial class MenuForm
+    partial class frmMenuInicio
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuInicio));
             this.maestroDeDiariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maestroDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -87,7 +87,7 @@
             this.toolStripDropDownButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(830, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(748, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -123,6 +123,7 @@
             this.maestroDePautasDelClienteToolStripMenuItem.Name = "maestroDePautasDelClienteToolStripMenuItem";
             this.maestroDePautasDelClienteToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.maestroDePautasDelClienteToolStripMenuItem.Text = "Maestro de Pautas del Cliente";
+            this.maestroDePautasDelClienteToolStripMenuItem.Click += new System.EventHandler(this.maestroDePautasDelClienteToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -155,6 +156,7 @@
             this.procesoDeVentasToolStripMenuItem.Name = "procesoDeVentasToolStripMenuItem";
             this.procesoDeVentasToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
             this.procesoDeVentasToolStripMenuItem.Text = "Proceso de Ventas";
+            this.procesoDeVentasToolStripMenuItem.Click += new System.EventHandler(this.procesoDeVentasToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton3
             // 
@@ -189,44 +191,47 @@
             this.toolStripDropDownButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton4.Image")));
             this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
-            this.toolStripDropDownButton4.Size = new System.Drawing.Size(85, 22);
-            this.toolStripDropDownButton4.Text = "Información";
+            this.toolStripDropDownButton4.Size = new System.Drawing.Size(42, 22);
+            this.toolStripDropDownButton4.Text = "Mas";
             // 
             // versiónToolStripMenuItem
             // 
             this.versiónToolStripMenuItem.Name = "versiónToolStripMenuItem";
-            this.versiónToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.versiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.versiónToolStripMenuItem.Text = "Versión";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(326, 39);
+            this.label1.Location = new System.Drawing.Point(296, 44);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "MENU INICIO";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // MenuForm
+            // frmMenuInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 503);
+            this.ClientSize = new System.Drawing.Size(748, 457);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "MenuForm";
+            this.MaximizeBox = false;
+            this.Name = "frmMenuInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MenuForm";
+            this.Text = "Menu de inicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuForm_Load);
             this.toolStrip1.ResumeLayout(false);

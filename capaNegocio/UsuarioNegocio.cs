@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;  // Asegúrate de tener esta referencia para SQL Server
+using System.Data.SqlClient;
+using capaDatos; 
 
 namespace capaNegocio
 {
     public class UsuarioNegocio
-    {   
-        //CAMBIAR EL SERVIDOR Y LA BASE DE DATOS DE ACUERDO A DONDE SE CORRA EL PROGRAMA
-
-        private string connectionString = "Data Source=.;Initial Catalog=BD_VENTA_DIARIOS;Integrated Security=True;";
-
+    {
         public string ValidarUsuario(string usuario, string contraseña)
         {
-            // Validaciones iniciales
             if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contraseña))
             {
                 return "Credenciales incorrectas. Por favor, rellene ambos campos.";
@@ -20,46 +16,52 @@ namespace capaNegocio
 
             try
             {
-                // Establecer conexión a la base de datos
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                // Instancia de clsConexion
+                clsConexion conexionDB = new clsConexion();
+                SqlConnection connection = conexionDB.AbrirConexion();
+
+                using (SqlCommand command = new SqlCommand("SP_VALIDAR_USUARIO", connection))
                 {
-                    connection.Open();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Usuario", usuario);
+                    command.Parameters.AddWithValue("@Contraseña", contraseña);
 
-                    // Crear consulta SQL para buscar el usuario
-                    string query = "SELECT vchPassword FROM Usuarios WHERE vchNombreUsuario = @Usuario";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        // Parámetro para evitar inyección SQL
-                        command.Parameters.AddWithValue("@Usuario", usuario);
-
-                        // Ejecutar la consulta
-                        object result = command.ExecuteScalar();
-
-                        // Si no se encuentra el usuario
-                        if (result == null)
+                        if (reader.Read())
                         {
-                            return "Usuario no encontrado.";
-                        }
+                            int usuarioId = reader.GetInt32(0);
+                            string usuarioIngresado = reader.GetString(1);
+                            string contraseñaAlmacenada = reader.GetString(2);
 
-                        // Comparar la contraseña ingresada con la de la base de datos
-                        string contraseñaAlmacenada = result.ToString();
+                            if (contraseñaAlmacenada == contraseña)
+                            {
+                                VariablesGL.Usuario = usuarioIngresado;
+                                VariablesGL.idUsuario = usuarioId;
 
-                        if (contraseñaAlmacenada == contraseña)
-                        {
-                            return "Acceso concedido.";
+                                return "Acceso concedido.";
+                            }
+                            else
+                            {
+                                return "Contraseña incorrecta.";
+                            }
                         }
                         else
                         {
-                            return "Contraseña incorrecta.";
+                            return "Usuario no encontrado.";
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Capturar cualquier error en la conexión o consulta a la base de datos
                 return $"Error al intentar conectar con la base de datos: {ex.Message}";
+            }
+            finally
+            {
+                clsConexion conexion = new clsConexion();
+                conexion.CerrarConexion();
+            
             }
         }
     }
