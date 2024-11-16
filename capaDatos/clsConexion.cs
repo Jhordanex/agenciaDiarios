@@ -42,7 +42,6 @@ namespace capaDatos
             }
             catch (SqlException ex)
             {
-                // Mostrar mensaje de error si falla el cierre de la conexión
                 throw new Exception("Error al cerrar la conexión con el servidor: " + ex.Message);
             }
         }

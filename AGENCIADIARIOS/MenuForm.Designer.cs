@@ -44,10 +44,10 @@
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.reporteHistoricoDePagoDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeEstadisticaDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
             this.versiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,7 +101,7 @@
             this.tsMaestros.Image = ((System.Drawing.Image)(resources.GetObject("tsMaestros.Image")));
             this.tsMaestros.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsMaestros.Name = "tsMaestros";
-            this.tsMaestros.Size = new System.Drawing.Size(129, 24);
+            this.tsMaestros.Size = new System.Drawing.Size(129, 22);
             this.tsMaestros.Text = "Modulo de Maestros";
             // 
             // maestroDeDiariosToolStripMenuItem1
@@ -134,7 +134,7 @@
             this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(115, 24);
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(115, 22);
             this.toolStripDropDownButton2.Text = "Modulo de Ventas";
             // 
             // inventarioDeDiariosToolStripMenuItem
@@ -142,6 +142,7 @@
             this.inventarioDeDiariosToolStripMenuItem.Name = "inventarioDeDiariosToolStripMenuItem";
             this.inventarioDeDiariosToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
             this.inventarioDeDiariosToolStripMenuItem.Text = "Inventario de Diarios";
+            this.inventarioDeDiariosToolStripMenuItem.Click += new System.EventHandler(this.inventarioDeDiariosToolStripMenuItem_Click);
             // 
             // rToolStripMenuItem
             // 
@@ -164,7 +165,7 @@
             this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
-            this.toolStripDropDownButton3.Size = new System.Drawing.Size(135, 24);
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(135, 22);
             this.toolStripDropDownButton3.Text = "Modulo de Reporteria";
             // 
             // reporteHistoricoDePagoDeClientesToolStripMenuItem
@@ -178,17 +179,6 @@
             this.reporteDeEstadisticaDeVentasToolStripMenuItem.Name = "reporteDeEstadisticaDeVentasToolStripMenuItem";
             this.reporteDeEstadisticaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.reporteDeEstadisticaDeVentasToolStripMenuItem.Text = "Reporte de Estadistica de Ventas";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(326, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MENU INICIO";
             // 
             // toolStripDropDownButton4
             // 
@@ -205,15 +195,26 @@
             // versiónToolStripMenuItem
             // 
             this.versiónToolStripMenuItem.Name = "versiónToolStripMenuItem";
-            this.versiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.versiónToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.versiónToolStripMenuItem.Text = "Versión";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(326, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "MENU INICIO";
             // 
             // MenuForm
             // 

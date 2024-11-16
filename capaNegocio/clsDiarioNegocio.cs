@@ -27,18 +27,33 @@ namespace capaNegocio
             return datos.ObtenerDiarios();
         }
 
+        public DataTable ObtenerInvtDiarios()
+        {
+            return datos.ObtenerInvtDiarios();
+        }
+
         public bool EditarDiario(int idDiario, string nuevoNombreDiario)
         {
             return datos.EditarDiario(idDiario, nuevoNombreDiario);
+        }
+
+        public bool EditarInvDiario(int idInvDiario, int cantidadStock, float precioDia)
+        {
+            return datos.EditarInvDiario(idInvDiario,cantidadStock, precioDia);
         }
 
         public string EliminarDiario(int iIdDiario)
         {
             return datos.EliminarDiario(iIdDiario);
         }
-        public void AgregarIventarioDarios(int diarioSeleccionado, int stock,int cantidadConsumida,double precioDia)
+        public void AgregarInvDiario(int diarioSeleccionado, int stock,double precioDia, int iUsuarioRegistro)
         {
-            datos.AgregarDiario(diarioSeleccionado, stock, cantidadConsumida, precioDia);
+            datos.AgregarInvDiario(diarioSeleccionado, stock, precioDia, iUsuarioRegistro);
+        }
+
+        public string EliminarInvDiario(int iInvIdDiario)
+        {
+            return datos.EliminarInvDiario(iInvIdDiario);
         }
     }
 }
