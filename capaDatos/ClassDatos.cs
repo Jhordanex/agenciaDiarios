@@ -146,6 +146,35 @@ namespace capaDatos
             }
         }
 
+        public bool EditarInvDiario(int idInvDiario, int cantidadStock, float precioDia,int usuarioModificacion)
+        {
+            try
+            {
+                AbrirConexion();
+                using (SqlCommand comando = new SqlCommand("SP_EDITAR_INVENTARIO_DIARIO", conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    comando.Parameters.AddWithValue("@peiIdInvDiario", idInvDiario);
+                    comando.Parameters.AddWithValue("@peiCantidadStock", cantidadStock);
+                    comando.Parameters.AddWithValue("@pefPrecioDia", precioDia);
+                    comando.Parameters.AddWithValue("@peiUsuarioCreacion", usuarioModificacion);
+
+                    int filasAfectadas = comando.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el registro: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
         public string EliminarDiario(int iIdDiario)
         {
             try
@@ -206,34 +235,6 @@ namespace capaDatos
                     comando.Parameters.AddWithValue("@peiIdDiario", idDiario);
                     comando.Parameters.AddWithValue("@pevchNuevoNombreDiario", nuevoNombreDiario);
                     comando.Parameters.AddWithValue("@pedtFechaModificacion", DateTime.Now);
-
-                    int filasAfectadas = comando.ExecuteNonQuery();
-                    return filasAfectadas > 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al actualizar el registro: " + ex.Message);
-                return false;
-            }
-            finally
-            {
-                CerrarConexion();
-            }
-        }
-
-        public bool EditarInvDiario(int idInvDiario, int cantidadStock,float precioDia)
-        {
-            try
-            {
-                AbrirConexion();
-                using (SqlCommand comando = new SqlCommand("SP_EDITAR_INVENTARIO_DIARIO", conexion))
-                {
-                    comando.CommandType = CommandType.StoredProcedure;
-
-                    comando.Parameters.AddWithValue("@peiIdInvDiario", idInvDiario);
-                    comando.Parameters.AddWithValue("@peiCantidadStock", cantidadStock);
-                    comando.Parameters.AddWithValue("@pefPrecioDia", precioDia);
 
                     int filasAfectadas = comando.ExecuteNonQuery();
                     return filasAfectadas > 0;

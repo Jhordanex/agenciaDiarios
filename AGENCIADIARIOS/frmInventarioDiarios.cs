@@ -105,7 +105,7 @@ namespace AGENCIADIARIOS
                     diarioSeleccionado = Convert.ToInt32(cbDiarios.SelectedValue.ToString());
                     stock = Convert.ToInt32(txtStock.Text);
                     precioDia = Convert.ToDouble(txtPrecioDia.Text, CultureInfo.InvariantCulture);
-                    usuarioNegocio.AgregarInvDiario(diarioSeleccionado, stock, precioDia, VariablesGL.iUsuarioId);
+                    usuarioNegocio.AgregarInvDiario(diarioSeleccionado, stock, precioDia, VariablesGL.idUsuario);
                     cbDiarios.Enabled = false;
                     txtStock.Enabled=false;
                     txtPrecioDia.Enabled = false;
@@ -160,7 +160,8 @@ namespace AGENCIADIARIOS
                         int iStock = Convert.ToInt32(txtStock.Text);
                         float precioDia = float.Parse(txtPrecioDia.Text, CultureInfo.InvariantCulture);
 
-                        bool bEditado = usuarioNegocio.EditarInvDiario(iIdInvDiario, iStock, precioDia);
+
+                        bool bEditado = usuarioNegocio.EditarInvDiario(iIdInvDiario, iStock, precioDia, VariablesGL.idUsuario);
                         txtStock.Enabled = false;
                         txtPrecioDia.Enabled = false;
                         txtStock.Text = "";

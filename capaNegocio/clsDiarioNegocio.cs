@@ -37,9 +37,9 @@ namespace capaNegocio
             return datos.EditarDiario(idDiario, nuevoNombreDiario);
         }
 
-        public bool EditarInvDiario(int idInvDiario, int cantidadStock, float precioDia)
+        public bool EditarInvDiario(int idInvDiario, int cantidadStock, float precioDia,int usuarioModificacion)
         {
-            return datos.EditarInvDiario(idInvDiario,cantidadStock, precioDia);
+            return datos.EditarInvDiario(idInvDiario,cantidadStock, precioDia, usuarioModificacion);
         }
 
         public string EliminarDiario(int iIdDiario)
