@@ -167,6 +167,7 @@
             this.dtgInvDiarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgInvDiarios.Location = new System.Drawing.Point(420, 12);
             this.dtgInvDiarios.Name = "dtgInvDiarios";
+            this.dtgInvDiarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgInvDiarios.Size = new System.Drawing.Size(537, 350);
             this.dtgInvDiarios.TabIndex = 2;
             this.dtgInvDiarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgInvDiarios_CellClick);
@@ -174,27 +175,30 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox3.Location = new System.Drawing.Point(-1, 449);
+            this.pictureBox3.Location = new System.Drawing.Point(-7, 391);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1079, 22);
+            this.pictureBox3.Size = new System.Drawing.Size(1000, 22);
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
             // lblNombreUser
             // 
             this.lblNombreUser.AutoSize = true;
-            this.lblNombreUser.BackColor = System.Drawing.Color.White;
-            this.lblNombreUser.Location = new System.Drawing.Point(999, 453);
+            this.lblNombreUser.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblNombreUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUser.ForeColor = System.Drawing.Color.White;
+            this.lblNombreUser.Location = new System.Drawing.Point(914, 396);
             this.lblNombreUser.Name = "lblNombreUser";
-            this.lblNombreUser.Size = new System.Drawing.Size(35, 13);
+            this.lblNombreUser.Size = new System.Drawing.Size(41, 13);
             this.lblNombreUser.TabIndex = 7;
             this.lblNombreUser.Text = "label3";
+            this.lblNombreUser.Click += new System.EventHandler(this.lblNombreUser_Click);
             // 
             // frmInventarioDiarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1073, 469);
+            this.ClientSize = new System.Drawing.Size(985, 413);
             this.Controls.Add(this.lblNombreUser);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.dtgInvDiarios);

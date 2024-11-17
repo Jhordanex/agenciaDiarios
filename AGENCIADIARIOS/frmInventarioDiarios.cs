@@ -236,5 +236,10 @@ namespace AGENCIADIARIOS
                 btnEditar.Text = "✏ Editar";
             }
         }
+
+        private void lblNombreUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
