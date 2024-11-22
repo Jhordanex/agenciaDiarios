@@ -35,7 +35,7 @@ namespace AGENCIADIARIOS
             txtPrecioDia.Enabled= false;
             btnAgregar.Text = "Nuevo";
 
-            string snombre = usuarioNegocio.ObtenerNombreUsuario(1);
+            string snombre = usuarioNegocio.ObtenerNombreUsuario(VariablesGL.idUsuario);
 
             if (!string.IsNullOrEmpty(snombre))
             {
@@ -51,23 +51,13 @@ namespace AGENCIADIARIOS
 		{
             DataTable comboDiarios = usuarioNegocio.ObtenerDiarios();
             DataTable tablaInvDiarios = usuarioNegocio.ObtenerInvtDiarios();
-
-            if (tablaInvDiarios.Rows.Count > 0)
-			{
-				cbDiarios.DataSource = comboDiarios;
-
-				cbDiarios.DisplayMember = "nombre Diario";
-				cbDiarios.ValueMember = "idDiario";
-
-                dtgInvDiarios.DataSource = tablaInvDiarios;
-                dtgInvDiarios.Columns["idInventario"].Visible = false;
-                dtgInvDiarios.Columns["idDiario"].Visible = false;
-            }
-			else
-			{
-				MessageBox.Show("No se encontraron diarios para mostrar.");
-			}
-		}
+			cbDiarios.DataSource = comboDiarios;
+			cbDiarios.DisplayMember = "nombre Diario";
+			cbDiarios.ValueMember = "idDiario";
+            dtgInvDiarios.DataSource = tablaInvDiarios;
+            dtgInvDiarios.Columns["idInventario"].Visible = false;
+            dtgInvDiarios.Columns["idDiario"].Visible = false;
+        }
 
         private void cbDiarios_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -238,6 +228,11 @@ namespace AGENCIADIARIOS
         }
 
         private void lblNombreUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgInvDiarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

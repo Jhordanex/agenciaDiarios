@@ -60,60 +60,68 @@
             this.gbInventario.Controls.Add(this.btnEliminar);
             this.gbInventario.Controls.Add(this.lblDiarioInventario);
             this.gbInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbInventario.Location = new System.Drawing.Point(12, 12);
+            this.gbInventario.Location = new System.Drawing.Point(16, 15);
+            this.gbInventario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbInventario.Name = "gbInventario";
-            this.gbInventario.Size = new System.Drawing.Size(383, 350);
+            this.gbInventario.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbInventario.Size = new System.Drawing.Size(511, 431);
             this.gbInventario.TabIndex = 1;
             this.gbInventario.TabStop = false;
             this.gbInventario.Text = "MAESTRO DE INVENTARIO DE DIARIOS";
             // 
             // txtPrecioDia
             // 
-            this.txtPrecioDia.Location = new System.Drawing.Point(215, 161);
+            this.txtPrecioDia.Location = new System.Drawing.Point(287, 198);
+            this.txtPrecioDia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrecioDia.Name = "txtPrecioDia";
-            this.txtPrecioDia.Size = new System.Drawing.Size(121, 20);
+            this.txtPrecioDia.Size = new System.Drawing.Size(160, 23);
             this.txtPrecioDia.TabIndex = 14;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 164);
+            this.label3.Location = new System.Drawing.Point(39, 202);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 13);
+            this.label3.Size = new System.Drawing.Size(144, 17);
             this.label3.TabIndex = 13;
             this.label3.Text = "Ingrese precio día:";
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(215, 117);
+            this.txtStock.Location = new System.Drawing.Point(287, 144);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(121, 20);
+            this.txtStock.Size = new System.Drawing.Size(160, 23);
             this.txtStock.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 120);
+            this.label1.Location = new System.Drawing.Point(28, 148);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 13);
+            this.label1.Size = new System.Drawing.Size(164, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ingrese stock del día:";
             // 
             // cbDiarios
             // 
             this.cbDiarios.FormattingEnabled = true;
-            this.cbDiarios.Location = new System.Drawing.Point(215, 69);
+            this.cbDiarios.Location = new System.Drawing.Point(287, 85);
+            this.cbDiarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbDiarios.Name = "cbDiarios";
-            this.cbDiarios.Size = new System.Drawing.Size(121, 21);
+            this.cbDiarios.Size = new System.Drawing.Size(160, 25);
             this.cbDiarios.TabIndex = 9;
             this.cbDiarios.SelectedIndexChanged += new System.EventHandler(this.cbDiarios_SelectedIndexChanged);
             // 
             // btnCancelar
             // 
             this.btnCancelar.ForeColor = System.Drawing.Color.DimGray;
-            this.btnCancelar.Location = new System.Drawing.Point(289, 296);
+            this.btnCancelar.Location = new System.Drawing.Point(385, 364);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(86, 37);
+            this.btnCancelar.Size = new System.Drawing.Size(115, 46);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "🔓 Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -122,9 +130,10 @@
             // btnEditar
             // 
             this.btnEditar.ForeColor = System.Drawing.Color.Gray;
-            this.btnEditar.Location = new System.Drawing.Point(197, 296);
+            this.btnEditar.Location = new System.Drawing.Point(263, 364);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(86, 37);
+            this.btnEditar.Size = new System.Drawing.Size(115, 46);
             this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "✏ Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -133,9 +142,10 @@
             // btnAgregar
             // 
             this.btnAgregar.ForeColor = System.Drawing.Color.Gray;
-            this.btnAgregar.Location = new System.Drawing.Point(8, 296);
+            this.btnAgregar.Location = new System.Drawing.Point(11, 364);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(86, 37);
+            this.btnAgregar.Size = new System.Drawing.Size(115, 46);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "✔ Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -144,9 +154,10 @@
             // btnEliminar
             // 
             this.btnEliminar.ForeColor = System.Drawing.Color.Gray;
-            this.btnEliminar.Location = new System.Drawing.Point(105, 296);
+            this.btnEliminar.Location = new System.Drawing.Point(140, 364);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(86, 37);
+            this.btnEliminar.Size = new System.Drawing.Size(115, 46);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "❌ Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -155,9 +166,10 @@
             // lblDiarioInventario
             // 
             this.lblDiarioInventario.AutoSize = true;
-            this.lblDiarioInventario.Location = new System.Drawing.Point(21, 72);
+            this.lblDiarioInventario.Location = new System.Drawing.Point(28, 89);
+            this.lblDiarioInventario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiarioInventario.Name = "lblDiarioInventario";
-            this.lblDiarioInventario.Size = new System.Drawing.Size(123, 13);
+            this.lblDiarioInventario.Size = new System.Drawing.Size(156, 17);
             this.lblDiarioInventario.TabIndex = 1;
             this.lblDiarioInventario.Text = "Seleccione el diario:";
             this.lblDiarioInventario.Click += new System.EventHandler(this.lblNombreDiarioInventario_Click);
@@ -165,19 +177,23 @@
             // dtgInvDiarios
             // 
             this.dtgInvDiarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgInvDiarios.Location = new System.Drawing.Point(420, 12);
+            this.dtgInvDiarios.Location = new System.Drawing.Point(560, 15);
+            this.dtgInvDiarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgInvDiarios.Name = "dtgInvDiarios";
+            this.dtgInvDiarios.RowHeadersWidth = 51;
             this.dtgInvDiarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgInvDiarios.Size = new System.Drawing.Size(537, 350);
+            this.dtgInvDiarios.Size = new System.Drawing.Size(716, 431);
             this.dtgInvDiarios.TabIndex = 2;
             this.dtgInvDiarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgInvDiarios_CellClick);
+            this.dtgInvDiarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgInvDiarios_CellContentClick);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox3.Location = new System.Drawing.Point(-7, 391);
+            this.pictureBox3.Location = new System.Drawing.Point(-9, 481);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1000, 22);
+            this.pictureBox3.Size = new System.Drawing.Size(1333, 27);
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
@@ -187,22 +203,24 @@
             this.lblNombreUser.BackColor = System.Drawing.Color.SteelBlue;
             this.lblNombreUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUser.ForeColor = System.Drawing.Color.White;
-            this.lblNombreUser.Location = new System.Drawing.Point(914, 396);
+            this.lblNombreUser.Location = new System.Drawing.Point(1219, 487);
+            this.lblNombreUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreUser.Name = "lblNombreUser";
-            this.lblNombreUser.Size = new System.Drawing.Size(41, 13);
+            this.lblNombreUser.Size = new System.Drawing.Size(52, 17);
             this.lblNombreUser.TabIndex = 7;
             this.lblNombreUser.Text = "label3";
             this.lblNombreUser.Click += new System.EventHandler(this.lblNombreUser_Click);
             // 
             // frmInventarioDiarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 413);
+            this.ClientSize = new System.Drawing.Size(1313, 508);
             this.Controls.Add(this.lblNombreUser);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.dtgInvDiarios);
             this.Controls.Add(this.gbInventario);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmInventarioDiarios";
             this.Text = "MAESTRO INVENTARIO DE DIARIOS";
             this.Load += new System.EventHandler(this.frmInventarioDiarios_Load);
