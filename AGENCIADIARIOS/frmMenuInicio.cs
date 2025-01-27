@@ -71,23 +71,16 @@ namespace AGENCIADIARIOS
             DiariosForm.Show();
             DiariosForm.TopMost = true;
             DiariosForm.Activate();
-            this.Close();
-
-
         }
 
         private void maestroDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-  
                 frmMaestroClientes frmMaestroClientes = new frmMaestroClientes();
                 ClientesNegocio clientesNegocio = new ClientesNegocio();
                 frmMaestroClientes.Show();
                 frmMaestroClientes.TopMost = true;
                 frmMaestroClientes.Activate();
                 clientesNegocio.ListarClientes();
-                this.Close();
-
-
         }
 
         private void toolStripDropDownButton4_Click(object sender, EventArgs e)
@@ -112,7 +105,6 @@ namespace AGENCIADIARIOS
             ventaForm.Show();
             ventaForm.TopMost = true;
             ventaForm.Activate();
-            this.Close();
 
         }
 
@@ -122,13 +114,12 @@ namespace AGENCIADIARIOS
             pautasForm.Show();
             pautasForm.TopMost = true;
             pautasForm.Activate();
-            this.Close();
-
         }
 
         private void inventarioDeDiariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmInventarioDiarios formInventario = new frmInventarioDiarios();
+            formInventario.Show();
         }
     }
 }

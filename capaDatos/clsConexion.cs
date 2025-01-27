@@ -13,7 +13,8 @@ namespace capaDatos
 
         public clsConexion()
         {
-            string cadenaConexion = "Data Source=.;Initial Catalog=BD_VENTA_DIARIOS;Integrated Security=True;";
+            //string cadenaConexion = "Data Source=.;Initial Catalog=BD_VENTA_DIARIOS;Integrated Security=True;";
+            string cadenaConexion = "Data Source=LAPTOP-KHFDS4S3\\SQLEXPRESS;Initial Catalog=BD_VENTA_DIARIOS;Integrated Security=True;";
             conexion = new SqlConnection(cadenaConexion);
         }
 
@@ -42,7 +43,6 @@ namespace capaDatos
             }
             catch (SqlException ex)
             {
-                // Mostrar mensaje de error si falla el cierre de la conexión
                 throw new Exception("Error al cerrar la conexión con el servidor: " + ex.Message);
             }
         }

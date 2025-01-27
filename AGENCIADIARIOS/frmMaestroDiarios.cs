@@ -216,5 +216,15 @@ namespace AGENCIADIARIOS
         {
 
         }
+
+		private void label1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+        private void lblNombreUser_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

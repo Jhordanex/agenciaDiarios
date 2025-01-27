@@ -58,9 +58,6 @@ namespace AGENCIADIARIOS
                 dataClientes.Columns["dtFechaRegistro"].HeaderText = "Fecha del Registro";
                 dataClientes.Columns["vchSindicato"].HeaderText = "Sindicato";
 
-
-
-
                 dataClientes.Columns["idCliente"].Visible = false;
 
                 btnEditar.Enabled = dataClientes.SelectedRows.Count > 0;

@@ -120,6 +120,7 @@ namespace AGENCIADIARIOS
             this.label1.Size = new System.Drawing.Size(154, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ingrese nombre del diario:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dtgDiarios
             // 
@@ -127,6 +128,7 @@ namespace AGENCIADIARIOS
             this.dtgDiarios.Location = new System.Drawing.Point(434, 44);
             this.dtgDiarios.Name = "dtgDiarios";
             this.dtgDiarios.ReadOnly = true;
+            this.dtgDiarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDiarios.Size = new System.Drawing.Size(543, 380);
             this.dtgDiarios.TabIndex = 1;
             this.dtgDiarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDiarios_CellClick);
@@ -153,6 +155,7 @@ namespace AGENCIADIARIOS
             this.lblNombreUser.Size = new System.Drawing.Size(41, 13);
             this.lblNombreUser.TabIndex = 6;
             this.lblNombreUser.Text = "label3";
+            this.lblNombreUser.Click += new System.EventHandler(this.lblNombreUser_Click_1);
             // 
             // frmMaestroDiarios
             // 
