@@ -1,5 +1,6 @@
 ﻿using capaDatos;
 using capaNegocio;
+using Microsoft.Build.Framework.XamlTypes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,10 @@ namespace AGENCIADIARIOS
     {
 
         private int selectedIdPauta;
-
-
         public frmMaestroPautasClientes()
         {
             InitializeComponent();
+
             dataPautasClientes.CellClick += new DataGridViewCellEventHandler(dataPautasClientes_CellClick);
             dataPautasClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataPautasClientes.AllowUserToAddRows = false;
@@ -39,11 +39,14 @@ namespace AGENCIADIARIOS
             cmbDiarios.SelectedIndex = -1;
             txtCantidadPromedio.Clear();
             selectedIdPauta = 0;
+            rbtnFechaHoyAgregar.Checked = false;
+            rbtnFechaMañanaAgregar.Checked = false;
+            rbtnHoy.Checked = false;
+            rbtnMañana.Checked = false;
+
+
 
         }
-
-
-
         private void CargarPautasClientes()
         {
             try
@@ -60,6 +63,7 @@ namespace AGENCIADIARIOS
                 //}
 
                 dataPautasClientes.DataSource = pautasClientes;
+
                 dataPautasClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 if (pautasClientes.Rows.Count == 0)
                 {
@@ -89,22 +93,17 @@ namespace AGENCIADIARIOS
                 MessageBox.Show("Error al cargar la lista de clientes: " + ex.Message);
             }
         }
-
-
-
-
-
         private void frmMaestroPautasClientes_Load(object sender, EventArgs e)
         {
+
+
             CargarPautasClientes();
             CargarClientesCombo();
             CargarDiariosCombo();
             lblNombreUser.Text = VariablesGL.Usuario;
-
             dataPautasClientes.ClearSelection();
 
         }
-
         private void CargarClientesCombo()
         {
             ClientesNegocio clientesNegocio = new ClientesNegocio();
@@ -116,8 +115,8 @@ namespace AGENCIADIARIOS
                 bindingSource.DataSource = clientes;
 
                 cmbClientes.DataSource = bindingSource;
-                cmbClientes.DisplayMember = "vchNombreCliente"; 
-                cmbClientes.ValueMember = "idCliente"; 
+                cmbClientes.DisplayMember = "vchNombreCliente";
+                cmbClientes.ValueMember = "idCliente";
 
                 cmbClientes.SelectedIndex = -1;
 
@@ -140,7 +139,7 @@ namespace AGENCIADIARIOS
                 cmbDiarios.DataSource = bindingSource;
                 cmbDiarios.DisplayMember = "NOMBRE DIARIO";
                 cmbDiarios.ValueMember = "idDiario";
-                cmbDiarios.SelectedIndex = -1;  
+                cmbDiarios.SelectedIndex = -1;
 
             }
             else
@@ -148,7 +147,6 @@ namespace AGENCIADIARIOS
                 MessageBox.Show("No se encontraron diarios para listar.");
             }
         }
-
         private void dataPautasClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -170,6 +168,7 @@ namespace AGENCIADIARIOS
             try
             {
                 int usuarioRegistro = VariablesGL.idUsuario;
+                DateTime fechaAgregarPauta;
 
                 if (cmbClientes.SelectedValue == null || cmbDiarios.SelectedValue == null ||
                     string.IsNullOrEmpty(txtCantidadPromedio.Text))
@@ -177,12 +176,27 @@ namespace AGENCIADIARIOS
                     MessageBox.Show("Por favor, llenar todos los campos requeridos");
                     return;
                 }
+                if (rbtnFechaHoyAgregar.Checked)
+                {
+                    fechaAgregarPauta = DateTime.Today;
+                }
+                else if (rbtnFechaMañanaAgregar.Checked)
+                {
+                    fechaAgregarPauta = DateTime.Today.AddDays(1);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione una fecha para agregar una pauta.");
+                    return;
+                }
+
 
                 pautasClientesNegocio.AgregarPautasClientes(
-                    Convert.ToInt32(cmbClientes.SelectedValue),    
-                    Convert.ToInt32(cmbDiarios.SelectedValue),     
-                    Convert.ToInt32(txtCantidadPromedio.Text),     
-                    usuarioRegistro                                
+                    Convert.ToInt32(cmbClientes.SelectedValue),
+                    Convert.ToInt32(cmbDiarios.SelectedValue),
+                    Convert.ToInt32(txtCantidadPromedio.Text),
+                    fechaAgregarPauta,
+                    usuarioRegistro
                 );
 
                 MessageBox.Show("Pauta del Cliente agregada exitosamente.");
@@ -195,7 +209,6 @@ namespace AGENCIADIARIOS
                 MessageBox.Show("Error al agregar la pauta del cliente: " + ex.Message);
             }
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             try
@@ -210,11 +223,11 @@ namespace AGENCIADIARIOS
                 }
 
                 pautasClientesNegocio.EditarPautasClientes(
-                    selectedIdPauta,                              
-                    Convert.ToInt32(cmbClientes.SelectedValue),    
-                    Convert.ToInt32(cmbDiarios.SelectedValue),     
-                    txtCantidadPromedio.Text,     
-                    usuarioModificacion                            
+                    selectedIdPauta,
+                    Convert.ToInt32(cmbClientes.SelectedValue),
+                    Convert.ToInt32(cmbDiarios.SelectedValue),
+                    txtCantidadPromedio.Text,
+                    usuarioModificacion
                 );
 
                 MessageBox.Show("Pauta del Cliente editada exitosamente.");
@@ -231,6 +244,10 @@ namespace AGENCIADIARIOS
             bool camposVacios = string.IsNullOrEmpty(cmbDiarios.Text) &&
                                 string.IsNullOrEmpty(cmbClientes.Text) &&
                                 string.IsNullOrEmpty(txtCantidadPromedio.Text);
+            string.IsNullOrEmpty(rbtnHoy.Text);
+            string.IsNullOrEmpty(rbtnMañana.Text);
+
+
 
             if (camposVacios && selectedIdPauta == 0)
             {
@@ -247,7 +264,6 @@ namespace AGENCIADIARIOS
                 btnEliminar.Enabled = false;
             }
         }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
@@ -275,6 +291,155 @@ namespace AGENCIADIARIOS
                 MessageBox.Show("Error al eliminar el cliente: " + ex.Message);
             }
         }
-    }
+        private void cmbDiarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool camposVacios = string.IsNullOrEmpty(cmbDiarios.Text) &&
+                        string.IsNullOrEmpty(cmbClientes.Text) &&
+                        string.IsNullOrEmpty(txtCantidadPromedio.Text);
+
+            if (camposVacios && selectedIdPauta == 0)
+            {
+                CargarPautasClientes();
+                LimpiarCampos();
+                btnAgregar.Enabled = true;
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                LimpiarCampos();
+                CargarPautasClientes();
+                dtpFechaFiltro.ResetText();
+                btnAgregar.Enabled = true;
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void rbtnHoy_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTransferir_Click(object sender, EventArgs e)
+        {
+
+            int idCliente = Convert.ToInt32(cmbClientes.SelectedValue);
+            DateTime dtFechaRegistro = dtpFechaFiltro.Value.Date;
+            DataTable pautasFiltradas = pautasClientesNegocio.FiltrarPautasClientes(idCliente, dtFechaRegistro);
+            int usuarioRegistro = VariablesGL.idUsuario;
+            DateTime fechaTransferencia;
+
+            try
+            {
+                if (pautasFiltradas == null || pautasFiltradas.Rows.Count == 0)
+                {
+                    MessageBox.Show("No hay pautas filtradas para transferir.");
+                    return;
+                }
+
+                if (cmbClientes.SelectedValue == null)
+                {
+                    MessageBox.Show("Seleccione un cliente antes de transferir las pautas.");
+                    return;
+                }
+
+                if (rbtnHoy.Checked)
+                {
+                    fechaTransferencia = DateTime.Today;
+                }
+                else if (rbtnMañana.Checked)
+                {
+                    fechaTransferencia = DateTime.Today.AddDays(1);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione una fecha para agregar una pauta.");
+                    return;
+                }
+
+                foreach (DataGridViewRow fila in dataPautasClientes.Rows)
+                {
+                    if (fila.Cells["idDiario"].Value != null && fila.Cells["vchCantidadpromedio"].Value != null)
+                    {
+                        int idDiario = Convert.ToInt32(fila.Cells["idDiario"].Value);
+                        int cantidadPromedio = Convert.ToInt32(fila.Cells["vchCantidadpromedio"].Value);
+
+                        pautasClientesNegocio.AgregarPautasClientes(
+                            idCliente,
+                            idDiario,
+                            cantidadPromedio,
+                            fechaTransferencia,
+                            usuarioRegistro
+                        );
+                    }
+                    else
+                    {
+                        Console.WriteLine("Fila con datos incompletos, no se procesará.");
+                    }
+                }
+
+                MessageBox.Show("Las pautas filtradas se han transferido exitosamente.");
+                CargarPautasClientes();
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al transferir las pautas: " + ex.Message);
+            }
+        }
+
+        private void btnBuscarPautas_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                int idCliente = Convert.ToInt32(cmbClientes.SelectedValue);
+                DateTime dtFechaRegistro = dtpFechaFiltro.Value.Date;
+
+                DataTable pautasFiltradas = pautasClientesNegocio.FiltrarPautasClientes(idCliente, dtFechaRegistro);
+
+
+                dataPautasClientes.DataSource = pautasFiltradas;
+                dataPautasClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                if (cmbClientes.SelectedValue == null)
+                {
+                    MessageBox.Show("Seleccione un cliente para filtrar las pautas.");
+                    return;
+                }
+
+
+                if (pautasFiltradas.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron pautas para este cliente en la fecha seleccionada.");
+                }
+
+                if (dataPautasClientes.Columns.Contains("idDiario"))
+                {
+                    dataPautasClientes.Columns["idDiario"].Visible = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar pautas: " + ex.Message);
+            }
+
+        }
+    }
 }

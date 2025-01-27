@@ -8,7 +8,7 @@ namespace capaDatos
     {
         clsConexion con = new clsConexion();
 
-        public void AgregarPautasClientes(int iCliente, int iDiario, int txtCantidadPromedio, int iUsuarioRegistro)
+        public void AgregarPautasClientes(int iCliente, int iDiario, int txtCantidadPromedio,DateTime dtFechaRegistro,  int iUsuarioRegistro)
         {
             try
             {
@@ -18,6 +18,7 @@ namespace capaDatos
                     cmd.Parameters.AddWithValue("@peiCliente", iCliente);
                     cmd.Parameters.AddWithValue("@peiDiario", iDiario);
                     cmd.Parameters.AddWithValue("@pevchCantidadPromedio", txtCantidadPromedio);
+                    cmd.Parameters.AddWithValue("@pedtFechaRegistro", dtFechaRegistro);
                     cmd.Parameters.AddWithValue("@peiUsuarioRegistro", iUsuarioRegistro);
 
                     cmd.ExecuteNonQuery();
@@ -102,5 +103,39 @@ namespace capaDatos
                 con.CerrarConexion();
             }
         }
+        public DataTable FiltrarPautasClientes(int idCliente, DateTime dtFechaRegistro)
+        {
+            DataTable result = new DataTable(); 
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_FILTRAR_PAUTAS_CLIENTES", con.AbrirConexion()))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                    DateTime fechaSinHora = dtFechaRegistro.Date; 
+
+                    cmd.Parameters.AddWithValue("@dtFechaRegistro", fechaSinHora);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al filtrar la pauta: " + ex.Message);
+            }
+            finally
+            {
+                con.CerrarConexion();
+            }
+
+            return result; 
+        }
+
+
     }
 }
