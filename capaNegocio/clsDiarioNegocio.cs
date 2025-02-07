@@ -32,6 +32,11 @@ namespace capaNegocio
             return datos.ObtenerInvtDiarios();
         }
 
+        public DataTable ObtenerVentasClientes(DateTime? fechaInicio = null, DateTime? fechaFin = null, string nombre = null, int? dni = null)
+        {
+            return datos.ObtenerVentasClientes(fechaInicio, fechaFin, nombre, dni);
+        }
+
         public bool EditarDiario(int idDiario, string nuevoNombreDiario)
         {
             return datos.EditarDiario(idDiario, nuevoNombreDiario);

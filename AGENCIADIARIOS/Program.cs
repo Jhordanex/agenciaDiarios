@@ -20,8 +20,9 @@ namespace AGENCIADIARIOS
             //Application.Run(new frmInventarioDiarios());
             //Application.Run(new frmMaestroDiarios());
             //Application.Run(new frmReporte_Voucher());
-			Application.Run(new Form2());
-
-		}
-	}
+            //Application.Run(new Form2());
+            //Application.Run(new frmProcesoVenta());
+            Application.Run(new ReporteVentasCliente());
+        }
+    }
 }

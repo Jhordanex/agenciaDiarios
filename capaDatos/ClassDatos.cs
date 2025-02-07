@@ -61,6 +61,42 @@ namespace capaDatos
             return tablaDiarios;
         }
 
+        public DataTable ObtenerVentasClientes(DateTime? fechaInicio = null, DateTime? fechaFin = null, string nombre = null, int? dni = null)
+        {
+            DataTable tablaDiarios = new DataTable();
+
+            try
+            {
+                AbrirConexion();
+                string query = "SP_REPORTE_VENTAS_CLIENTE";
+                using (SqlCommand comando = new SqlCommand(query, conexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    comando.Parameters.Add("@FechaInicio", SqlDbType.Date).Value = (object)fechaInicio ?? DBNull.Value;
+                    comando.Parameters.Add("@FechaFin", SqlDbType.Date).Value = (object)fechaFin ?? DBNull.Value;
+                    comando.Parameters.Add("@Nombre", SqlDbType.NVarChar, 50).Value = (object)nombre ?? DBNull.Value;
+                    comando.Parameters.Add("@Dni", SqlDbType.Int).Value = (object)dni ?? DBNull.Value;
+
+                    using (SqlDataReader reader = comando.ExecuteReader())
+                    {
+                        tablaDiarios.Load(reader);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+
+            return tablaDiarios;
+        }
+
+
         public string ObtenerNombreUsuario(int idUser)
         {
             string nombre = string.Empty;
